@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	마지막 mapper10.xml 파일
+	완벽한 형태의 CRUD를 다 집어넣었다... resultMap, 동적쿼리문, sql 모듈화
+	
+-->
+<mapper namespace="UserMapper10">
+	<resultMap type="user" id="userSelectMap">
+		<result property="userId" column="user_id" jdbcType="VARCHAR"/>
+		<result property="userName" column="user_name" jdbcType="VARCHAR"/>
+		<result property="password" column="password" jdbcType="VARCHAR"/>
+		<result property="age" column="age" jdbcType="INTEGER"/>
+		<result property="grade" column="grade" jdbcType="NUMERIC"/>
+		<result property="regDate" column="reg_date" jdbcType="DATE"/>
+	</resultMap>
+	
+	<!-- SQL Query문의 재사용성을 높이는 방안 :: sql, include 태그를 사용한다. -->
+	<sql id="select-users">
+		SELECT
+		user_id, user_name, password, age, grade, reg_date
+		FROM users
+	</sql>
+	<sql id="orderby-userid-desc">
+		ORDER BY user_id DESC
+	</sql>
+	
+	<insert id="addUser" parameterType="user">
+		INSERT
+		INTO users(user_id, user_name, password, age, grade, reg_date)
+		VALUES(#{userId}, 
+			   #{userName}, 
+			   #{password}, 
+			   #{age}, 
+			   #{grade}, 
+			   #{regDate})
+	</insert>
+	
+	<update id="updateUser" parameterType="user">
+		UPDATE users
+		SET user_name=#{userName}
+		WHERE user_id=#{userId}
+	</update>
+	
+	<delete id="removeUser" parameterType="string">
+		DELETE
+		FROM users
+		WHERE user_id=#{VALUE}
+	</delete>
+	
+	<!-- 정적인 쿼리문 -->
+	<select id="getUser" parameterType="user" resultMap="userSelectMap">
+		<include refid="select-users"/>
+		WHERE user_id=#{userId}
+	</select>
+	
+	<!-- 
+		동적인 쿼리문
+		Where절 이후를 동적으로 가동하는 쿼리문
+		userName이 홍길동이고 age가 30인 데이터를 검색하는 쿼리문을 동적으로 작성... 
+	-->
+	<!-- TEST 1, 2, 3, 4 모두 적용 가능 -->
+	<select id="getUserList" parameterType="user" resultMap="userSelectMap">
+		<include refid="select-users"/>
+		<where>
+			<if test="userName != null">
+				user_name LIKE #{userName}
+			</if>
+			<if test="age!=null">
+				OR age LIKE #{age}
+			</if>
+		</where>
+		<include refid="orderby-userid-desc"/>
+	</select>
+</mapper>

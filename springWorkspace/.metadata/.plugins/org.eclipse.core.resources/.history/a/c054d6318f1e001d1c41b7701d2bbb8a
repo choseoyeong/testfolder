@@ -1,0 +1,39 @@
+package mybatis.services.user.impl;
+
+import java.util.List;
+
+import mybatis.services.domain.User;
+import mybatis.services.user.UserDAO;
+import mybatis.services.user.UserService;
+
+public class MyBatisUserServiceImpl11 implements UserService{
+	private UserDAO userDAO;
+
+	public void setUserDAO(UserDAO userDAO) {
+		System.out.println("::" +getClass().getName()+".setUserDAO() Call...");
+		this.userDAO = userDAO;
+	}
+
+	@Override
+	public void addUser(User user) throws Exception {
+		
+	}
+
+	@Override
+	public void updateUser(User user) throws Exception {
+		
+	}
+
+	@Override
+	public User getUser(String userId) throws Exception {
+	
+		return null;
+	}
+
+	@Override
+	public List<User> getUserList(User user) throws Exception {
+	
+		return null;
+	}
+
+}

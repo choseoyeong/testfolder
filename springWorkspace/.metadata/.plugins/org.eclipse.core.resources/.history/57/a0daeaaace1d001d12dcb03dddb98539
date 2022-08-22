@@ -1,0 +1,30 @@
+package com.service.mybatis.client;
+
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import com.service.mybatis.vo.MySawon;
+
+public class MySawonAppTest01 {
+
+	public static void main(String[] args) throws Exception{
+		//1. 폼으로부터 받은 값을 가지고 VO 생성..
+		MySawon vo = new MySawon();
+		vo.setId("bnk");
+		vo.setPwd("1234");
+		vo.setName("염미정");
+		vo.setAge(30);
+		
+		//2. 지금부터..핵심이 되는 설정문서를 읽어들인다.
+		Reader r= Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		
+		//3. SqlSessionFactory
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		
+		
+	}
+
+}

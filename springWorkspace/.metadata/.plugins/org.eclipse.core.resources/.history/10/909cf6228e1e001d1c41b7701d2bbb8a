@@ -1,0 +1,9 @@
+package mybatis.services.user;
+/*
+ * Service Layer::
+ * "데이터 가공 Layer"
+ * 
+ */
+public interface UserService {
+
+}

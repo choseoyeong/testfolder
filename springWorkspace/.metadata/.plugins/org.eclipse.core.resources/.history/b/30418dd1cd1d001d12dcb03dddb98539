@@ -1,0 +1,9 @@
+package com.service.mybatis.client;
+
+public class MySawonAppTest01 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

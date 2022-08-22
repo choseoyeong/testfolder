@@ -1,0 +1,13 @@
+package mybatis.services.user;
+/*
+ * Service Layer::
+ * "데이터 가공 Layer"
+ * 게시판의 페이징 생각하면 된다.
+ * 
+ * DB에서 가지고 온 데이터를 조작하는 레이어
+ * Persistance Layer의 DAO가 DI(주입)되어야 한다.
+ * 
+ */
+public interface UserService {
+
+}

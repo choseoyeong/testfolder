@@ -1,0 +1,6 @@
+package com.service.mybatis.vo;
+
+public class MySawon {
+	private int num, age;
+	private String id, pwd, name, hiredate;
+}

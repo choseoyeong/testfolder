@@ -1,0 +1,6 @@
+package util;
+
+// SqlSessionFactory까지 받아오는 로직을 여기서 작성...
+public class FactoryService {
+
+}

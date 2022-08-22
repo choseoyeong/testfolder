@@ -1,0 +1,5 @@
+package spring.service.broker.impl;
+
+public class BrokerDatabaseImpl {
+
+}

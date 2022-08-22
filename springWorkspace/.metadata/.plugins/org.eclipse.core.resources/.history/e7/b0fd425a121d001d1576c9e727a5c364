@@ -1,0 +1,7 @@
+package spring.service.dao.impl;
+
+import spring.service.dao.MemberDAO;
+
+public class MemberDAOImpl implements MemberDAO{
+
+}

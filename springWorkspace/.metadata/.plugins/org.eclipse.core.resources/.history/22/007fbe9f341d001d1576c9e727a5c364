@@ -1,0 +1,9 @@
+package workshop01;
+
+public class BrokerDISpringTest {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

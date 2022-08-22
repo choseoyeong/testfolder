@@ -1,0 +1,16 @@
+package spring.service.user;
+
+import java.util.List;
+
+import spring.service.domain.MemberVO;
+
+public interface MemberService {
+	void registerMember(MemberVO vo) throws Exception;
+	void updateMember(MemberVO vo) throws Exception;
+	
+	List<MemberVO> showAllMember() throws Exception;	
+	MemberVO getMember(String id)throws Exception;	
+	
+	boolean idExist(String id) throws Exception;
+	MemberVO login(MemberVO vo) throws Exception;
+}

@@ -1,0 +1,8 @@
+package spring.service.broker;
+
+import spring.service.domain.Customer;
+
+public interface BrokerDatabase {
+	void registerCustomer(Customer customer);
+	void registerStock(Stock stock);
+}

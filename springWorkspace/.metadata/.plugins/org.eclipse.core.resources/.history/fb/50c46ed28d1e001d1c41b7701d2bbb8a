@@ -1,0 +1,8 @@
+package mybatis.services.user;
+/*
+ * 
+ * 
+ */
+public interface UserService {
+
+}

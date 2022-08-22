@@ -1,0 +1,51 @@
+package spring.service.dice.play;
+
+import spring.service.dice.Dice;
+import spring.service.dice.DiceA;
+
+/*
+ *	FileName : Player02.java
+ *	ㅇPlayer01에서는 DiceA를 직접 가지고 있는 관계였다면(Tight한 Coupling 관계)
+ *	ㅇ DiceB, DiceC를 추가할때마다 Player01에서 수정해야 하는 코드가 기하급수적으로 늘어나서 재사용성에 치명적 결과 야기
+ *  ㅇ 해결책으로 Dice라는 interface를 추가
+ *  ㅇ Player02가 Dice를 가지는 관계를 작성..  
+ */
+public class Player02 {
+	
+	///Field
+	private Dice dice;		// interface를 hasing 하도록	
+	private int totalValue;
+	
+	///Constructor Method
+	public Player02() {
+	}
+	
+	///Method (getter/setter)
+	public DiceA getDiceA() {
+		return diceA;
+	}
+	public void setDiceA(DiceA diceA) {
+		this.diceA = diceA;
+	}
+	public int getTotalValue() {
+		return totalValue;
+	}
+	public void setTotalValue(int totalValue) {
+		this.totalValue = totalValue;
+	}
+	
+	//==> count 만큼 주사위를 굴려서 합을 후하는 행위
+	public void playDice(int count){
+		
+		System.out.println("==>"+getClass().getName()+".playDice() start....");
+
+		for (int i = 0; i < count; i++) {
+			diceA.selectedNumber();
+			System.out.println("::[ "+diceA.getClass().getName()+" ] 의 선택된수 : "+diceA.getValue());
+			totalValue += diceA.getValue(); 
+		}
+		
+		System.out.println("==>"+getClass().getName()+".playDice() end....");
+	}
+
+}//end of class

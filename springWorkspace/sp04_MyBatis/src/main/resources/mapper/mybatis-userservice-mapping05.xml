@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 심플하게 CRUD 다 해보겠다. -->
+<mapper namespace="UserMapper05">
+	<insert id="addUser" parameterType="user">
+		INSERT
+		INTO users(user_id, user_name, password, age, grade, reg_date)
+		VALUES(#{userId}, 
+			   #{userName}, 
+			   #{password}, 
+			   #{age}, 
+			   #{grade}, 
+			   #{regDate})
+	</insert>
+	
+	<update id="updateUser" parameterType="user">
+		UPDATE users
+		SET user_name=#{userName}
+		WHERE user_id=#{userId}
+	</update>
+	
+	<delete id="removeUser" parameterType="string">
+		DELETE
+		FROM users
+		WHERE user_id=#{VALUE}
+	</delete>
+</mapper>
+
+<!-- 
+NULL값 허용하는 옵션을 SqlMapConfig01.xml에 추가
+
+CRUD :						 : ReturnType
+select : session.selectList() : List
+		 session.selectOne() : Object(User)..type Casting 해줘야 함
+insert : session.insert() : Object(0 or 1)
+delete : session.delete() : Object(0 or 1)
+update: session.update() : Object(0 or 1)
+
+MyBatis Framework에서만 작동할 경우(Spring 연결 안된 경우)
+insert(), delete(), update() 수행 직후 반드시 commit() 해줘야 완벽하게 DB 반영된다.
+반대로,
+Spring 연결이 된 경우에는 
+insert(), delete(), update() 수행 직후 반드시 commit()을 하게 되면 
+Error 발생.. 이미 Spring에서 했기 때문
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

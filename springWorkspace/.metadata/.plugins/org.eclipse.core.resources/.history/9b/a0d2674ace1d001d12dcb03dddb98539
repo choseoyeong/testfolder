@@ -1,0 +1,21 @@
+package com.service.mybatis.client;
+
+import org.apache.ibatis.io.Resources;
+
+import com.service.mybatis.vo.MySawon;
+
+public class MySawonAppTest01 {
+
+	public static void main(String[] args) {
+		//1. 폼으로부터 받은 값을 가지고 VO 생성..
+		MySawon vo = new MySawon();
+		vo.setId("bnk");
+		vo.setPwd("1234");
+		vo.setName("염미정");
+		vo.setAge(30);
+		
+		//2. 지금부터..핵심이 되는 설정문서를 읽어들인다.
+		Resources.getResourceAsReader("config/SqlMapConfig.xml");
+	}
+
+}

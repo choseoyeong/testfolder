@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Bean Configuration File -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+												 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+<bean id="customer1" class="spring.service.domain.Customer">
+	<constructor-arg value="111" index="0"/>
+	<constructor-arg value="JSY" index="1"/>
+	<constructor-arg value="BUSAN" index="2"/>
+</bean>
+
+<bean id="customer2" class="spring.service.domain.Customer">
+	<property name="ssn" value="222"/>
+	<property name="custName" value="KDB"/>
+	<property name="address" value="MANCITY"/>
+</bean>
+
+<bean id="stock1" class="spring.service.domain.Stock">
+	<constructor-arg value="BNK" index="0"/>
+	<constructor-arg value="" index="1"/>
+</bean>
+</beans>
+
+

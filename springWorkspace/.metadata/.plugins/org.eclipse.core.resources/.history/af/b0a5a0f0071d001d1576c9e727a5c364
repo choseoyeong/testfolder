@@ -1,0 +1,62 @@
+package spring.service.hello.test;
+
+import spring.service.hello.Hello;
+import spring.service.hello.HelloFactory;
+/*
+ * FileName : HelloTestApp02.java
+ * ?…‡ Hello.class ë¥? ?‚¬?š©?•˜?Š” Application 
+ * ?…‡ [ HelloTestApp01ê³? ë¹„êµ ]
+ * 		- ?‚¬?š©?•   Bean ë¥? hello.properties(meta-data)?— text ë¡? ???¥ ?•˜ê³?...
+ * 		- instance ë¥? ì§ì ‘ ?ƒ?„±?•˜ì§? ?•Š?œ¼ë©?, HelloFactory ?—?„œ return ?˜?Š” instance ?‚¬?š©.
+ */
+public class HelloTestApp02 {
+	
+	///main method
+	public static void main(String[] args) {
+		
+		// 1. ?‚¬?š©?•  Bean  ? •ë³´ë?? ê°–ëŠ”  hello.properties(meta-data)ë¥?
+		//      parsing, Bean instanceë¥? ?ƒ?„±?•  HelloFactory  instance ?ƒ?„±
+		HelloFactory helloFactory =	HelloFactory.getInstance();
+		
+		// 2.  helloFactory instance ë¡? parsing ?•  resource::meta-data(hello.properties) ? „?‹¬   
+		helloFactory.setConfigResource("./src/main/resources/config/hello.properties");
+		
+		// 3. helloFactory instance ë¡? ë¶??„° instance.one ?´ë¦„ì„ ê°–ëŠ” Hello instance Request  
+		Hello hello = helloFactory.getBean("instance.one");
+		
+		// 4.  printMessage() ?˜¸ì¶?  
+		hello.printMessage();
+	}
+	
+}//end of class
+
+
+/*
+ * [[[[[[ HelloTestApp01 ê³ ë ¤?•  ?‚¬?•­ ]]]]]] ê³? ë¹„êµ
+ * 
+ * [ ê³ ë ¤?•  ?‚¬?•­ :: ?‹¤ë¥? Bean ?‚¬?š© ë°? ì¶œë ¥ Message ë³?ê²? ?‹œ... ]
+ * 
+ * 1. new Hello() ?˜ instance ?ƒ?„± ?•˜?“œì½”ë”©
+ * 		-  Hello.class, ?•˜?œ„ class ?˜?Š” ?‹¤ë¥? class ?‚¬?š©?„ ?•  ê²½ìš° 
+ * 			==>  ?‹¤?‹œ ì½”ë”© ?›„ ì»´íŒŒ?¼ ê³¼ì • ?ˆ˜?–‰
+ *     [[[[[[ HelloTestApp02 ë³?ê²? ]]]]]] 
+ *     		 : ?‹¤ë¥? Bean ?‚¬?š©?•  ê²½ìš° hello.properties ?˜ ?‚´?š©?„ ë³?ê²½í•œ?‹¤ë©?....
+ *          ==>[?•œë²ˆë” ê³ ë ¤...]
+ *          ==> ?˜„?¬?Š” Data Type  Hello ?„?œ¼ë¡? Hello ë§? ?ƒ?„± ê´?ë¦? ê°??Š¥ 
+ *          ==> ?‹¤ë¥? Data type ?˜ ?ƒ?„±??....
+ *                  (HelloFactory?Š” Hello Type ë§? ?ƒ?„± ê´?ë¦? ?•œ?‹¤....)
+ * 
+ * 2. ì¶œë ¥?•  message ?•˜?“œ ì½”ë”© 
+ *		-  ?‹¤ë¥? message ë¥? ì¶œë ¥ì½”ì ?•œ?‹¤ë©? 
+ *			==> ?‹¤?‹œ ì½”ë”© ?›„ ì»´íŒŒ?¼ ê³¼ì • ?ˆ˜?–‰ ( :: setter Method ë¥? ?‚¬?š©?•˜ì§? ?•Š?? ê²½ìš°ë¡? ?•œ? • )
+ *     [[[[[[ HelloTestApp02 ë³?ê²? ]]]]]]
+ *     		 : HelloTestApp02?Š” ë¯¸ì ?š© ?‹¤?Œ?˜ˆ? œ?—?„œ...
+ *			 ==> hello.properties ?— Message ë¥? ???¥ ë¶ˆëŸ¬?˜¬ ?ˆ˜ ?ˆ?‹¤ë©?....
+ *
+ *
+ *  ==> ?œ„?˜ ?•˜?“œì½”ë”©?œ ë¶?ë¶?(1.instance ?ƒ?„±, 2.ì¶œë ¥ message)?„ 
+ *  		text file(ë¶?ê°?? •ë³?,Meta Data) ?— ???¥?•˜ê³?  Application ?? runtime ?‹œ  text ?— ???¥?œ ?‚´?š©?„ 
+ *  		?½?–´ ?ˆ˜?–‰?•˜?Š” êµ¬ì¡°?¼ë©?,  ?‚¬?š© ?•  instance/message ?—  ë³?ê²½ì‚¬?•­?´ ë°œìƒ?•˜ë©? text ë§? ?ˆ˜? •
+ *  		Application ??  text ë¥? ?†µ?•´ ? „?‹¬?œ ? •ë³´ë?? ?‚¬?š© ?•¨?œ¼ë¡? Bean ?? ?ˆ˜? • ?•  ?•„?š”ê°? ?—†?‹¤
+ *         ( text/ë©”í??°?´?„°?˜ ?™œ?š© )
+ */

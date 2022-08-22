@@ -1,0 +1,5 @@
+package mybatis.services.user.impl;
+
+public class MyBatisUserServiceImpl11 {
+
+}

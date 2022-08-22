@@ -1,0 +1,6 @@
+package spring.service.domain;
+
+public class Stock {
+	private String symbol;
+	private double price;
+}

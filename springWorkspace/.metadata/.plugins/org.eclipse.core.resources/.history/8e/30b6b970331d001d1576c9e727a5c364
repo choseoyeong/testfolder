@@ -1,0 +1,20 @@
+package spring.service.broker;
+
+public class Customer {
+	private String ssn;
+	private String custName;
+	private String address;
+	
+	public Customer() {
+		
+	}
+	
+	public Customer(String ssn, String custName, String address) {
+		super();
+		this.ssn = ssn;
+		this.custName = custName;
+		this.address = address;
+	}
+	
+	
+}

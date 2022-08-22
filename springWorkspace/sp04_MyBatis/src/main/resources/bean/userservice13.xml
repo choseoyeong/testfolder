@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- MyBatis와 DI 스프링 연결 :: 빈 5개 지정 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+<!-- DB 정보 연결 -->
+<context:property-placeholder location="classpath:config/dbconn.properties"/>
+
+<!-- 1. DataSource API 빈 정의 -->
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="${jdbc.oracle.driver}"/>
+	<property name="url" value="${jdbc.oracle.url}"/>
+	<property name="username" value="${jdbc.oracle.username}"/>
+	<property name="password" value="${jdbc.oracle.password}"/>
+</bean>
+
+<!-- 2. MyBatis Framework API빈 정의 :: 2개 정의 -->
+<!-- ID는 실체 클래스 이름과 똑같이 짓는게 좋음(맨 앞은 소문자로 바꿔서) -->
+<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="configLocation" value="config/SqlMapConfig01.xml"/>
+	<property name="dataSource" ref="dataSource"/>
+</bean>
+
+<!-- 얘는 무조건 생성자로 주입해야 함 -->
+<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"/>
+</bean>
+
+<!-- 3. 비즈니스 로직  Layer User Definition 빈 정의 :: 2개 정의 -->
+<!-- Annotaion 사용해서 여기는 필요 없음 -->
+<context:component-scan base-package="mybatis.services.user.impl"/>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

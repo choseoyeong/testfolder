@@ -1,0 +1,33 @@
+package spring.service.dice;
+
+import java.util.Random;
+
+/*
+ * FileName : DiceB.java
+ * ?…‡ ì£¼ì‚¬?œ„ Object Modeling
+ * ?…‡ 1 ~ 6 ?ˆ˜ë¥? ?œ?¤?•˜ê²?  ë¦¬í„´
+ */
+public class DiceB {
+	
+	///Field
+	private int value;
+
+	///Constructor
+	public DiceB() {
+		System.out.println("::"+getClass().getName()+" ?ƒ?„±?....");
+	}
+
+	//Method (getter/setter)
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	//==> ì£¼ì‚¬?œ„ë¥? ?˜?? ?„ ?ƒ?˜?Š” ?ˆ«?ë¥? ?ƒ?‚°?•˜?Š” ?–‰?œ„(ë¬´ì‘?œ„ë¡? ?ˆ«? ?ƒ?‚°)
+	public void selectedNumber(){
+		value = new Random().nextInt(6) + 1;
+	}
+	
+}//end of class

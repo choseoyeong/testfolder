@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 예전 DAO에서 비즈니스 로직마다 작성되었던 SQL Query문을 외부 데이터로 모듈화시킨 메타데이터 파일 -->
+<mapper>
+
+</mapper>

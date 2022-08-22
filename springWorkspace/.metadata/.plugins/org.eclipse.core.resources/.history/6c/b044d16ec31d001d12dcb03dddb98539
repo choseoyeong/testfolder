@@ -1,0 +1,9 @@
+package com.service.mybatis.vo;
+
+public class MySawon {
+	private int num, age;	// 컬럼명과 동일
+	private String id, pwd, name, hiredate; // 컬럼명과 동일
+	
+	
+	
+}

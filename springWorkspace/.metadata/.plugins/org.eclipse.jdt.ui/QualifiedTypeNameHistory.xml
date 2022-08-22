@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="spring.service.hello.Greet"/>
+<fullyQualifiedTypeName name="spring.service.dao.impl.MemberDAOImpl"/>
+<fullyQualifiedTypeName name="spring.service.dao.MemberDAO"/>
+<fullyQualifiedTypeName name="spring.service.dice.Dice"/>
+<fullyQualifiedTypeName name="spring.service.dice.impl.DiceAImpl"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSeparatorUI"/>
+<fullyQualifiedTypeName name="spring.service.domain.Stock"/>
+<fullyQualifiedTypeName name="spring.service.broker.BrokerDatabase"/>
+<fullyQualifiedTypeName name="com.service.mybatis.vo.MySawon"/>
+<fullyQualifiedTypeName name="util.FactoryService"/>
+<fullyQualifiedTypeName name="mybatis.services.domain.User"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="java.io.Reader"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="spring.service.test.TestUtil"/>
+<fullyQualifiedTypeName name="spring.service.user.impl.MemberDAOImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.tomcat.jni.Mmap"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="spring.service.domain.MemberVO"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="mybatis.services.user.UserService"/>
+<fullyQualifiedTypeName name="mybatis.services.user.UserDAO"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.apache.catalina.core.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="spring.service.user.MemberService"/>
+<fullyQualifiedTypeName name="spring.service.user.MemberDAO"/>
+</qualifiedTypeNameHistroy>

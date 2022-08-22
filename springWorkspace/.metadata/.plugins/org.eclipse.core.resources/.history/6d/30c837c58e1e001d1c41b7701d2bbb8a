@@ -1,0 +1,7 @@
+package mybatis.services.user.impl;
+
+import mybatis.services.user.UserService;
+
+public class MyBatisUserServiceImpl11 implements UserService{
+
+}

@@ -1,0 +1,45 @@
+package com.service.mybatis.client;
+
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import com.service.mybatis.vo.MySawon;
+
+public class MySawonAppTest02 {
+
+	public static void main(String[] args) throws Exception{
+		//1. 핵심이 되는 설정문서를 읽어들인다.
+		Reader r= Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		
+		//2. SqlSessionFactory
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		
+		//3. SqlSession
+		SqlSession session = factory.openSession();
+		
+		//4. session안에 쿼리문 실행하는 기능이 들어있다(executeUpdate(), executeQuery()) 
+		session.selectList("sawonMapper.sawonList", vo);
+		session.commit();		// 필수
+		session.close();
+		
+		System.out.println(vo.getName() + "님이 등록 되셨습니다.");
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

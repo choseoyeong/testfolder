@@ -1,0 +1,6 @@
+package spring.service.broker;
+
+public interface BrokerDatabase {
+	void registerCustomer(Customer customer);
+	
+}

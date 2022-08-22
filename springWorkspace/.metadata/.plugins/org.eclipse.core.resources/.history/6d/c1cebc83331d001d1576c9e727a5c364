@@ -1,0 +1,5 @@
+package spring.service.domain;
+
+public class Stock {
+
+}
