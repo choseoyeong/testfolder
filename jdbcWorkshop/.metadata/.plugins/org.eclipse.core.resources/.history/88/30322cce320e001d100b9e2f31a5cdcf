@@ -1,0 +1,15 @@
+package com.edu.broker.dao;
+
+public interface BrokerDao {
+
+	
+	// create, delete, update
+	
+	
+	public void createTrade(String ssn, Stock s) ;
+	
+	
+	
+	public void deleteTrade(String ssn, Stock s) ;
+	public void updateTrade(String ssn, Stock s) ;
+}

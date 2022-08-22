@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;broker.twotier.dao.Database&apos; to &apos;DatabaseMyself&apos;&#x0D;&#x0A;- Original project: &apos;jdbc06_Final&apos;&#x0D;&#x0A;- Original element: &apos;broker.twotier.dao.Database&apos;&#x0D;&#x0A;- Renamed element: &apos;broker.twotier.dao.DatabaseMyself&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Database&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;broker.twotier.dao{Database.java[Database" matchStrategy="1" name="DatabaseMyself" qualified="false" references="true" similarDeclarations="false" stamp="1658994089643" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,6 @@
+package sql;
+
+public interface QueryInfo {
+	String query_create = 
+			"CREATE TABLE customer(ssn NUMBER(3), name VARCHAR2(20), address VARCHAR2(30))";
+}

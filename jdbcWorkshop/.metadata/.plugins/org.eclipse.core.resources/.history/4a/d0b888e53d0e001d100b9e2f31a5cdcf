@@ -1,0 +1,10 @@
+package broker.twotier.vo;
+/*
+ * 주식을 보유하는 고객에 대한 정보를 담는 클래스...
+ * 고객 == 주식을 보유하지 않은 고객 + 현재 주식을 보유하고 있는 고객
+ */
+
+
+public class CustomerRec {
+	
+}

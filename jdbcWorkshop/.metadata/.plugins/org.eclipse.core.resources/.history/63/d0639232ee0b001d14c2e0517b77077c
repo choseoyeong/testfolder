@@ -1,0 +1,57 @@
+package com.edu.jdbc.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+/*
+ * Test2의 문제점은
+ * 1. 서버정보가 프로그램에 하드코딩 되어져 있다. --> public static final 상수값으로 지정
+ * 2. Connection을 열어서 사용한 후 close 해줘야 한다. --> finally 구문
+ * 
+ * 
+ */
+public class DBConnectionTest3 {
+	public static final String DRIVER_NAME = "";
+	public static final String URL = "";
+	public static final String USER = "";
+	public static final String PASS = "";
+	
+	public DBConnectionTest3() {
+		try {
+			// 1. 드라이버 로딩...
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("1. 드라이버 로딩 성공...");
+			
+			// 2. DB 서버와 연결
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+			Connection conn = DriverManager.getConnection(url, "hr", "hr");
+			System.out.println("2. DB서버 연결 성공...");
+			
+			// 3. PreparedStatement 객체 생성
+			String query = "SELECT id, name, addr FROM custom";
+			PreparedStatement ps = conn.prepareStatement(query);
+			System.out.println("3. PrepareStatement 생성...");
+	
+			// 4. 쿼리문 실행
+			ResultSet rs=ps.executeQuery();
+	        while(rs.next()) {
+	            System.out.println(rs.getInt("id")+"\t"
+	                              +rs.getString("name")+"\t"
+	                              +rs.getString("addr"));
+	        }
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println("드라이버 로딩 실패...");
+		} catch (SQLException e) {
+			System.out.println("DB서버 연결 실패...");
+		}
+	}
+	
+	public static void main(String[] args) {
+		new DBConnectionTest3();
+	}
+
+}

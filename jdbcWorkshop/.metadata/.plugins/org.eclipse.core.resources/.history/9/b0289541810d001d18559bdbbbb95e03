@@ -1,0 +1,10 @@
+package com.edu.book.exception;
+
+public class DuplicateISBNException extends Exception{
+	public DuplicateISBNException() {
+		this("BookNotFoundException...");
+	}
+	public DuplicateISBNException(String message) {
+		super(message);		//System.out.println(e.getMessage())
+	}
+}

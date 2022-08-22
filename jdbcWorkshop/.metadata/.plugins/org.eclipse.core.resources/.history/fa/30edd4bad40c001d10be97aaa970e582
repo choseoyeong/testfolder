@@ -1,0 +1,5 @@
+package com.edu.jdbc.vo;
+
+public class Customer {
+
+}

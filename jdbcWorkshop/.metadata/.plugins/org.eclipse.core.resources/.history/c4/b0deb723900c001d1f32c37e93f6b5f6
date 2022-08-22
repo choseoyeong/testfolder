@@ -1,0 +1,8 @@
+// DB Access하는 기능만으로 이뤄진 클래스
+// Business Logic으로만 구성된 클래스
+// DAO 클래스
+package com.edu.jdbc.dao;
+
+public class CustomerDAO {
+
+}

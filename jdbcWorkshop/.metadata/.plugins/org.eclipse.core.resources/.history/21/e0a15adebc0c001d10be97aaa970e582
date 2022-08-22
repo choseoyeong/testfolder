@@ -1,0 +1,234 @@
+package com.edu.jdbc.dao.impl;
+
+import java.security.GeneralSecurityException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.edu.jdbc.dao.CustomerDAO;
+import com.edu.jdbc.exception.DuplicateSsnException;
+import com.edu.jdbc.exception.RecordNotFoundException;
+import com.edu.jdbc.vo.Customer;
+
+import config.ServerInfo;
+
+public class CustomerDAOImpl implements CustomerDAO{
+	private static CustomerDAOImpl dao = new CustomerDAOImpl();
+	private CustomerDAOImpl() { System.out.println("Singleton Pattern...Creating..."); }
+	public static CustomerDAOImpl getInstance() {
+		return dao;
+	}
+
+	@Override
+	public Connection getConnect() throws SQLException {
+		Connection conn = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		System.out.println("DB Server Connection....");
+		return conn;
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps) throws SQLException {
+		if(ps!=null) ps.close();
+		if(conn!=null) conn.close();
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps, ResultSet rs) throws SQLException {
+		if(rs!=null) rs.close();
+		closeAll(conn, ps);
+	}
+
+	private boolean ssnExist(int ssn, Connection conn) throws SQLException {
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+//		boolean flag = false;
+		
+		String query = "SELECT ssn FROM customer WHERE ssn=?";
+		
+		ps = conn.prepareStatement(query);
+		ps.setInt(1, ssn);
+		
+		rs = ps.executeQuery();
+	
+//		System.out.println("SsnExist : " + flag);
+		return rs.next();
+	}
+	
+	
+	 // projection 등 활용해서 필요한 데이터만 가져와서 사용하기
+	 // ssn이 있는지 없는지 확인... SELECT ssn FROM customer WHERE ssn=?
+	@Override
+	public void registerCustomer(Customer vo) throws SQLException, DuplicateSsnException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			conn = getConnect();
+			
+			if(!ssnExist(vo.getSsn(), conn) ) {
+				String query = "INSERT INTO customer(ssn, cust_name, address) VALUES(?, ?, ?)";
+				ps = conn.prepareStatement(query);
+				
+				ps.setInt(1, vo.getSsn());
+				ps.setString(2, vo.getCustName());
+				ps.setString(3, vo.getAddress());
+				
+				System.out.println(ps.executeUpdate() + " 명 회원 등록 성공!");
+			}
+			else {
+				throw new DuplicateSsnException("이미 그런 사람 존재 합니다..");
+			}
+			
+		} finally {
+			closeAll(conn, ps);
+		}
+	}
+
+	// ssn이 있는지 없는지 확인... SELECT ssn FROM customer WHERE ssn=?
+	@Override
+	public void removeCustomer(int ssn) throws SQLException, RecordNotFoundException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			conn = getConnect();
+			
+			if(ssnExist(ssn, conn)) {
+				String query = "DELETE FROM customer WHERE ssn=?";
+				ps = conn.prepareStatement(query);
+				
+				ps.setInt(1, ssn);
+				
+				System.out.println(ps.executeUpdate() + " 명 탈퇴 성공!!");
+			}
+			else {
+				throw new RecordNotFoundException();
+			}
+		} finally {
+			closeAll(conn, ps);
+		}
+	}
+	
+	// ssn이 있는지 없는지 확인... SELECT ssn FROM customer WHERE ssn=?  ==> 반복되니까 새 메소드로 뽑기(메소드명은 SsnExist)
+	@Override
+	public void updateCustomer(Customer vo) throws SQLException, RecordNotFoundException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			conn = getConnect();
+			
+			if(ssnExist(vo.getSsn(), conn)) {
+				String query = "UPDATE customer SET cust_nmae=?, address=?";
+				ps = conn.prepareStatement(query);
+				
+				ps.setInt(1, ssn);
+				
+				System.out.println(ps.executeUpdate() + " 명 탈퇴 성공!!");
+			}
+			else {
+				throw new RecordNotFoundException();
+			}
+		} finally {
+			closeAll(conn, ps);
+		}
+		
+	}
+
+	@Override
+	public Customer getCustomer(int ssn) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnect();
+			
+			String query = "SELECT * FROM customer WHERE ssn=?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, ssn);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				System.out.println(rs.getInt("ssn") + "\t"
+								+ rs.getString("cust_name") + "\t"
+								+ rs.getString("address"));
+			}
+			
+		} finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		return null;
+	}
+
+	@Override
+	public ArrayList<Customer> getCustomer() throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		ArrayList<Customer> custArray = new ArrayList<Customer>();
+		
+		try {
+			conn = getConnect();
+			
+			String query = "SELECT * FROM customer";
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			
+			int idx=1;
+			while(rs.next()) {
+				custArray.add(new Customer(rs.getInt("ssn"), rs.getString("cust_name"), rs.getString("address")));
+				idx++;
+			}
+			
+		} finally {
+			closeAll(conn, ps, rs);
+		}
+
+		
+		return custArray;
+	}
+
+	@Override
+	public ArrayList<Customer> getCustomer(String address) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		ArrayList<Customer> custArray = new ArrayList<Customer>();
+		
+		try {
+			conn = getConnect();
+			
+			String query = "SELECT * FROM customer WHERE address=?";
+			ps = conn.prepareStatement(query);
+			
+			ps.setString(1, address);
+			
+			rs = ps.executeQuery();
+			
+			int idx=1;
+			while(rs.next()) {
+				custArray.add(new Customer(rs.getInt("ssn"), rs.getString("cust_name"), rs.getString("address")));
+				idx++;
+			}
+			
+		} finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		return custArray;
+	}
+
+	@Override
+	public int getCountByAddress(String address) throws SQLException {
+		return getCustomer(address).size();
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.edu.jdbc.test;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import config.ServerInfo;
+
+public class CustomerJDBCTest {
+	public CustomerJDBCTest() {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		// 1) 드라이버 로딩
+		Class.forName(ServerInfo.DRIVER_NAME);
+		System.out.println("1. 드라이버 로딩 성공...");
+		
+		// 2) 디비 서버 연결
+		// 3) PreparedStatement 생성
+		// 4) sql 실행하기 (DML과 SELECT)
+				
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

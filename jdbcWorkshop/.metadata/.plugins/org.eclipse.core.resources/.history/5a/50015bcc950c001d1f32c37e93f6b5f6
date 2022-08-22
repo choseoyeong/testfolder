@@ -1,0 +1,97 @@
+// DB Access하는 기능만으로 이뤄진 클래스
+// Business Logic으로만 구성된 클래스
+// DAO 클래스
+/*
+ * 1. 드라이버 로딩
+ * 2. DB 연결...Connection 반환받고
+ * 
+ * 3. PreparedStatement 객체...쿼리문 실행하는 기능을 여기서 가지고 있다.
+ * 4. 값 바인딩...쿼리문 실행
+ * 		int executeUpdate()	--> INSERT/UPDATE/DELETE (DML)
+ * 		ResultSet executeQuery() --> SELECT
+ * 
+ * 5. 자원을 닫는다.
+ * 		(열은 반대 순서로)
+ * 		ResultSet -> PreparedStatement -> connection close()
+ * 
+ * => 3, 4를 메소드 형식으로 구현하겠음
+ */
+
+/*
+ * Business Logic 마다
+ * 1. 고정적인 로직..static 	 --> 새로운 기능을 하나 정의...이걸 매번 작성하는게 아니라 호출..
+ * 2. 가변적인 로직..dynamic
+ * 
+ * 
+ */
+package com.edu.jdbc.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import config.ServerInfo;
+
+public class CustomerDAO {
+	public CustomerDAO() {
+		System.out.println("2. DAO Creating....");
+	}
+	
+	// DML
+	public void addCustomer(int ssn, String name, String address) throws SQLException{
+		Connection conn = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		
+		String query = "INSERT INTO customer(ssn, name, address) VALUES(?, ?, ?)";
+		PreparedStatement ps = conn.prepareStatement(query);
+		
+		ps.setInt(1, ssn);
+		ps.setString(2, name);
+		ps.setString(3, address);
+		
+		System.out.println(ps.executeUpdate() + " 명 회원 등록 성공!! ");
+		
+		ps.close();
+		conn.close();
+	}
+	
+	public void deleteCustomer(int ssn, String name, String address) throws SQLException {
+		Connection conn = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		
+		String query = "DELETE FROM customer WHERE ssn=?";
+		PreparedStatement ps = conn.prepareStatement(query);
+		
+		ps.setInt(1, ssn);
+		
+		System.out.println(ps.executeUpdate() + " 명 회원 삭제 성공!! ");
+		
+		ps.close();
+		conn.close();
+	}
+	
+	public void updateCustomer(int ssn, String name, String address) {
+		
+	}
+	
+	
+	// SELECT
+	public void  printAllCustomer() {
+		
+	}
+	
+	
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

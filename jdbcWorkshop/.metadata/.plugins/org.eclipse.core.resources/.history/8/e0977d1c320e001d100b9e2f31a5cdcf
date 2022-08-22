@@ -1,0 +1,13 @@
+package com.edu.broker.dao;
+
+public interface BrokerDao {
+
+	
+	// create, delete, update
+	
+	
+	public void createTrade() ;
+	public void sellTrade();
+	public void deleteTrade() ;
+	public void updateTrade() ;
+}

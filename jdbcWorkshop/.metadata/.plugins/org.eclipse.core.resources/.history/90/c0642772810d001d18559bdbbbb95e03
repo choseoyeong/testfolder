@@ -1,0 +1,9 @@
+package com.edu.book.dao;
+
+public interface BookDAO {
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,13 @@
+package com.edu.jdbc.test;
+
+import com.edu.jdbc.dao.impl.CustomerDAOImpl;
+
+public class CustomerDAOTest {
+
+	public static void main(String[] args) {
+		CustomerDAOImpl dao = new CustomerDAOImpl();
+		
+		
+	}
+
+}

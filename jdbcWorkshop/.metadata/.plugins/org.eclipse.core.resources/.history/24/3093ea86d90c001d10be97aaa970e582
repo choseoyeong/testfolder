@@ -1,0 +1,113 @@
+package com.edu.jdbc.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.edu.jdbc.dao.CustomerDAO;
+import com.edu.jdbc.exception.DuplicateSsnException;
+import com.edu.jdbc.exception.RecordNotFoundException;
+import com.edu.jdbc.vo.Customer;
+
+import config.ServerInfo;
+
+public class CustomerDAOImpl implements CustomerDAO{
+	private static CustomerDAOImpl dao = new CustomerDAOImpl();
+	private CustomerDAOImpl() {
+		System.out.println("싱글톤 패턴 생성중...");
+	}
+	public static CustomerDAOImpl getInstance() {
+		return dao;
+	}
+
+	private Connection conn = null;
+	private PreparedStatement ps = null;
+	private ResultSet rs = null;
+	
+	@Override
+	public Connection getConnect() throws SQLException {
+		conn = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		
+		System.out.println("DB 서버 연결...");
+		
+		return conn;
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps) throws SQLException {
+		if(ps!=null) ps.close();
+		if(conn!=null) conn.close();
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps, ResultSet rs) throws SQLException {
+		if(rs!=null) rs.close();
+		closeAll(conn, ps);
+	}
+	
+	// 존재 여부 확인 함수
+	private boolean ssnExist(int ssn) throws SQLException, DuplicateSsnException{
+		conn = getConnect();
+		
+		try {
+			String query = "SELECT ssn FROM customer WHERE ssn=?";
+			ps = conn.prepareStatement(query);
+			
+			ps.setInt(1, ssn);
+			
+			rs = ps.executeQuery(query);
+					
+		} finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		
+		return rs.next();
+	}
+
+	@Override
+	public void registerCustomer(Customer vo) throws SQLException, DuplicateSsnException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeCustomer(int ssn) throws SQLException, RecordNotFoundException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateCustomer(Customer vo) throws SQLException, RecordNotFoundException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Customer getCustomer(int ssn) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Customer> getCustomer() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Customer> getCustomer(String address) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getCountByAddress(String address) throws SQLException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

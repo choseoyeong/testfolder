@@ -1,0 +1,11 @@
+package broker.twotier.vo;
+/*
+ * Shares 테이블의 정보를 담는 클래스...
+ * 누가...ssn
+ * 어떤 주식을...symbol
+ * 얼만큼...quantity
+ * 보유하는지에 대한 정보를 담고 있다. 
+ */
+public class SharesRec {
+	
+}

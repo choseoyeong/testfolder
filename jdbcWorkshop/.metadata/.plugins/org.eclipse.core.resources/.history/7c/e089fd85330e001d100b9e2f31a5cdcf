@@ -1,0 +1,15 @@
+package com.edu.broker.dao;
+
+public interface BrokerDao {
+
+	
+	// create, delete, update
+	
+	
+	public void createTrade(String ssn, Stock s) throws SQLException, DuplicateException ;
+	
+	
+	public void sellTrade(String ssn, Stock s, int quantity) throws SQLException, NotFoundException, InvalidInputException;
+	public void deleteTrade(String ssn, Stock s) throws SQLException, NotFoundException;
+	public void updateTrade(String ssn, Stock s) throws SQLException, NotFoundException;
+}

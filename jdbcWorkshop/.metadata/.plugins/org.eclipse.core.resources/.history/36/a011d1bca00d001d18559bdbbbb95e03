@@ -1,0 +1,332 @@
+package com.edu.book.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.edu.book.dao.BookDAO;
+import com.edu.book.exception.BookNotFoundException;
+import com.edu.book.exception.DuplicateISBNException;
+import com.edu.book.exception.InvalidInputException;
+import com.edu.book.vo.Book;
+
+import config.ServerInfo;
+
+public class BookDAOImpl implements BookDAO{
+	private static BookDAOImpl dao = new BookDAOImpl();
+	private BookDAOImpl() {	}
+	public static BookDAOImpl getInstance() {
+		return dao;
+	}
+
+	@Override
+	public Connection getConnect() throws SQLException {
+		Connection conn 
+			= DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		System.out.println("2. DB 연결 성공\n----------------");
+		
+		return conn;
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps) throws SQLException {
+		if(ps!=null) ps.close();
+		if(conn!=null) conn.close();
+	}
+
+	@Override
+	public void closeAll(Connection conn, PreparedStatement ps, ResultSet rs) throws SQLException {
+		if(rs!=null) rs.close();
+		closeAll(conn, ps);
+	}
+
+	@Override
+	public int isExists(String isbn, Connection conn) throws SQLException {
+		int count = 0;
+		
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT * FROM Book WHERE isbn=?";
+		ps = conn.prepareStatement(query);
+		ps.setString(1, isbn);
+		
+		rs = ps.executeQuery();
+		while(rs.next()) {
+			count++;
+		}
+		
+		System.out.println("isExist => " + count);
+		
+		return count;
+	}
+
+	@Override
+	public void registerBook(Book vo) throws SQLException, DuplicateISBNException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			conn = getConnect();
+			
+			if( isExists(vo.getIsbn(), conn) == 0 ) {	// 찾는 책이 없으면
+				String query 
+					= "INSERT INTO Book(isbn,title,author,publisher,price) VALUES(?,?,?,?,?)";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, vo.getIsbn());
+				ps.setString(2, vo.getTitle());
+				ps.setString(3, vo.getWriter());
+				ps.setString(4, vo.getPublisher());
+				ps.setInt(5, vo.getPrice());
+				
+				System.out.println(ps.executeUpdate() + "개의 책이 등록되었습니다.");
+			} 
+			else {
+				throw new DuplicateISBNException("이미 등록되어 있는 책입니다.");
+			}
+			
+		}
+		finally {
+			closeAll(conn, ps);
+		}
+	}
+
+	@Override
+	public void deleteBook(Book vo) throws SQLException, BookNotFoundException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			conn = getConnect();
+			
+			if(isExists(vo.getIsbn(), conn) != 0) {
+				String query = "DELETE FROM Book WHERE isbn=?";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, vo.getIsbn());
+				
+				System.out.println(ps.executeUpdate() + "개의 책이 삭제되었습니다.");
+			}
+			else {
+				throw new BookNotFoundException("삭제할 책이 존재하지 않습니다.");
+			}
+		} 
+		finally {
+			closeAll(conn, ps);
+		}
+		
+	}
+
+	@Override
+	public Book findByIsbn(String isbn) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		Book book = null;
+		
+		try {
+			conn = getConnect();
+			String query = "SELECT * FROM Book WHERE isbn=?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, isbn);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				book = new Book(rs.getString("isbn"),
+								rs.getString("title"),
+								rs.getString("author"),
+								rs.getString("publisher"),
+								rs.getInt("price"));
+			}
+			
+			if(book == null) { System.out.println("검색 결과가 없습니다."); }
+			
+		}
+		finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		return book;
+	}
+
+	@Override
+	public Book findByTitle(String title) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		Book book = null;
+		
+		try {
+			conn = getConnect();
+			String query = "SELECT * FROM Book WHERE title LIKE '%'||?||'%'";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, title);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				book = new Book(rs.getString("isbn"),
+								rs.getString("title"),
+								rs.getString("author"),
+								rs.getString("publisher"),
+								rs.getInt("price"));
+			}
+			
+			if(book == null) { System.out.println("검색 결과가 없습니다."); }
+		}
+		finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		return book;
+	}
+
+	@Override
+	public ArrayList<Book> findByWriter(String writer) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		ArrayList<Book> books = new ArrayList<Book>();
+		
+		try {
+			conn = getConnect();
+			String query = "SELECT * FROM Book WHERE author LIKE '%'||?||'%'";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, writer);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				books.add(new Book(rs.getString("isbn"),
+								rs.getString("title"),
+								rs.getString("author"),
+								rs.getString("publisher"),
+								rs.getInt("price")));
+			}
+			
+			if(books.size() == 0) { System.out.println("검색 결과가 없습니다."); }
+		}
+		finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		return books;
+	}
+
+	@Override
+	public ArrayList<Book> findByPublisher(String publish) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		ArrayList<Book> books = new ArrayList<Book>();
+		
+		try {
+			conn = getConnect();
+			String query = "SELECT * FROM Book WHERE publisher LIKE '%'||?||'%'";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, publish);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				books.add(new Book(rs.getString("isbn"),
+								rs.getString("title"),
+								rs.getString("author"),
+								rs.getString("publisher"),
+								rs.getInt("price")));
+			}
+			
+			if(books.size() == 0) { System.out.println("검색 결과가 없습니다."); }
+		}
+		finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		return books;
+	}
+
+	@Override
+	public ArrayList<Book> findByPrice(int min, int max) throws SQLException, InvalidInputException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		ArrayList<Book> books = new ArrayList<Book>();
+		
+		try {
+			conn = getConnect();
+			String query = "SELECT * FROM Book WHERE price BETWEEN ? AND ?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, min);
+			ps.setInt(2, max);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				books.add( new Book(rs.getString("isbn"),
+									rs.getString("title"),
+									rs.getString("author"),
+									rs.getString("publisher"),
+									rs.getInt("price")) );
+			}
+		}
+		finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		if(books.size() == 0) { System.out.println("검색 결과가 없습니다."); }
+		
+		return books;
+	}
+
+	@Override
+	public void discountBook(int per, String publish) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnect();
+			
+			String query = "SELECT * FROM book WHERE publisher=?";
+			ps = conn.prepareStatement(query);
+		}
+		finally {
+			closeAll(conn, ps, rs);
+		}
+		
+	}
+
+	@Override
+	public ArrayList<Book> findAllBook() throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		ArrayList<Book> books = new ArrayList<Book>();
+		
+		
+		try {
+			conn = getConnect();
+			String query = "SELECT * FROM Book";
+			ps = conn.prepareStatement(query);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				books.add( new Book(rs.getString("isbn"),
+									rs.getString("title"),
+									rs.getString("author"),
+									rs.getString("publisher"),
+									rs.getInt("price")) );
+			}
+		}
+		finally {
+			closeAll(conn, ps, rs);
+		}
+		
+		return books;
+	}
+
+}

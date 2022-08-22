@@ -1,0 +1,22 @@
+package com.edu.jdbc.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.edu.jdbc.exception.DuplicateSsnException;
+import com.edu.jdbc.exception.RecordNotFoundException;
+import com.edu.jdbc.vo.Customer;
+
+public interface CustomerDAO {
+	// 공통적인 기능의 Template
+	public Connection getConnect() throws SQLException;
+	public void closeAll(Connection conn, PreparedStatement ps) throws SQLException;
+	public void closeAll(Connection conn, PreparedStatement ps, ResultSet rs) throws SQLException;
+	
+	// Business Logic Template
+	void registerCustomer(Customer vo) throws SQLException, DuplicateSsnException;
+	void removeCustomer(int ssn) throws SQLException, RecordNotFoundException;
+	void updateCustomer(Customer vo) throws SQLException, RecordNotFoundException;
+}

@@ -1,0 +1,11 @@
+package com.edu.jdbc.exception;
+
+public class RecordNotFoundException extends Exception {
+	public RecordNotFoundException() {
+		System.out.println("This is RecordNotFoundException");
+	}
+	
+	public RecordNotFoundException(String message) {
+		System.out.println(message);
+	}
+}

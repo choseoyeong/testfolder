@@ -1,0 +1,29 @@
+// DB Access하는 기능만으로 이뤄진 클래스
+// Business Logic으로만 구성된 클래스
+// DAO 클래스
+/*
+ * 1. 드라이버 로딩
+ * 2. DB 연결...Connection 반환받고
+ * 
+ * 3. PreparedStatement 객체...쿼리문 실행하는 기능을 여기서 가지고 있다.
+ * 4. 값 바인딩...쿼리문 실행
+ * 		int executeUpdate()	--> INSERT/UPDATE/DELETE (DML)
+ * 		ResultSet executeQuery() --> SELECT
+ * 
+ * 5. 자원을 닫는다.
+ * 		(열은 반대 순서로)
+ * 		ResultSet -> PreparedStatement -> connection close()
+ * 
+ * => 3, 4를 메소드 형식으로 구현하겠음
+ */
+package com.edu.jdbc.dao;
+
+import config.ServerInfo;
+
+public class CustomerDAO {
+	public CustomerDAO() throws ClassNotFoundException {
+		Class.forName(ServerInfo.DRIVER_NAME);
+		System.out.println("드라이버 로딩 성공...");
+	}
+}
+ 

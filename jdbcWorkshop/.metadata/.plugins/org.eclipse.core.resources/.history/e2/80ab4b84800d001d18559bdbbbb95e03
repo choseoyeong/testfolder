@@ -1,0 +1,5 @@
+package com.edu.book.vo;
+
+public class Book {
+
+}

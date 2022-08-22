@@ -1,0 +1,11 @@
+package com.edu.jdbc.exception;
+
+public class DuplicateSsnException extends Exception {
+	public DuplicateSsnException() {
+		this("This is DuplicateSsnException...");
+	}
+	
+	public DuplicateSsnException(String message) {
+		super(message);
+	}
+}

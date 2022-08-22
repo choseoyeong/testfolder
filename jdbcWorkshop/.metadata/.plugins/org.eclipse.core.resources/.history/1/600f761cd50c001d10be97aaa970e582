@@ -1,0 +1,7 @@
+package snippet;
+
+public class Snippet {
+	public static final STRING BASE_NAME = "홍길동";
+		
+}
+

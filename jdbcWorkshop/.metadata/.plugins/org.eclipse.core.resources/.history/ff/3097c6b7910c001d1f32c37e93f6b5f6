@@ -1,0 +1,27 @@
+package com.edu.jdbc.test;
+
+import com.edu.jdbc.dao.CustomerDAO;
+
+public class SimpleCustomerDAOTest1 {
+
+	public static void main(String[] args) {
+		
+		CustomerDAO dao = new CustomerDAO();
+		
+		
+		
+//		dao.addCustomer();
+		
+		
+	} //main
+	
+	// static initialization block...
+	static {
+		try {
+			CustomerDAO dao = new CustomerDAO();
+		} catch (ClassNotFoundException e) {
+			System.out.println("드라이버 로딩 실패...");
+		}
+	}
+
+}

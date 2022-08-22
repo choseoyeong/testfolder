@@ -1,0 +1,5 @@
+package com.edu.broker.dao;
+
+public interface BrokerDao {
+
+}
