@@ -1,0 +1,6 @@
+package com.service.spring.model;
+
+@Service
+public class MyProductServiceImpl {
+	MyProductDAO 
+}

@@ -1,0 +1,9 @@
+package com.service.spring.test;
+
+public class MyBatisFrameworkJUnitTest2 {
+	
+	
+	public void unit() {
+		
+	}
+}

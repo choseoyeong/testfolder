@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="ns.sql.MyProductMapper">
+<!-- INSERT문에서 PK에 해당하는 값이 DB에서 자동증가되는 값일때는 쿼리문 작성에 유의해야 한다. 
+	즉, 화면으로부터 값을 받아서 생성하는 VO와 DB에서 증가된 레코드 ROW가 완전히 동기화되도록 쿼리문이 작성되어야
+	이후에 프로그램 작성 시 문제 발생되지 않는다.
+-->
+
+<!-- 
+	추가되는 기능:: 상품명, 제조사, 모든 상품 검색하는 mapper 쿼리를 추가한다. 
+	1) 쿼리문의 id는 option 태그의 value 값으로 한다.
+	2) 이때 findProductByName은 LIKE 연산자와 함께 와일드카드 %를 사용한다.
+	3) SELECT문에 속함...
+		sql 모듈화, include, resultType 대신 resultMap을 사용
+		(지금은 컬럼명와 필드명이 일치하기 때문에 굳이 resultMap 사용 안해도 되지만 다를 경우를 대비해 사용해보기)
+		
+		setting name = "mapUnderscoreToCamelcase" value="true"로 SqlMapConfig에서 지정함
+-->
+
+	<!-- <resultMap type="myProduct" id="productSelectMap">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="maker" column="maker"/>
+		<result property="price" column="price"/>
+	</resultMap> -->
+	
+	<sql id="select-myproduct">
+		SELECT id, name, maker, price
+		FROM myproduct
+	</sql>
+	
+	<insert id="addProduct" parameterType="myProduct">
+		<!-- order는 실행 순서(BEFORE)이므로 먼저 돌리겠다는 뜻 -->
+		<!-- INSERT에서만 제공하는 태그 -->
+		<!-- nextVal로 시퀀스를 1 증가시키고, setId(int 타입의 시퀀스값) -->
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			SELECT myproduct_seq.nextVal FROM dual
+		</selectKey>
+		INSERT
+		INTO myproduct(id, name, maker, price)
+		VALUES(#{id}, #{name}, #{maker}, #{price})
+	</insert>
+	
+	<select id="findProductByName" parameterType="string" resultType="myProduct">
+		<include refid="select-myproduct"/>
+		<where>
+			<if test="">
+				name LIKE '%' || #{value} || '%' 
+			</if>
+		</where>
+	</select>
+	
+	<select id="findProducts" parameterType="string" resultType="myProduct">
+		<include refid="select-myproduct"/>
+		<where>
+			<if test="value != null">
+				name LIKE '%' || #{value} || '%' 
+			</if>
+			<if test="value != null">
+				maker=#{value} 
+			</if>
+			<if test="value==null"> 
+			</if>
+		</where>
+	</select>
+</mapper>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

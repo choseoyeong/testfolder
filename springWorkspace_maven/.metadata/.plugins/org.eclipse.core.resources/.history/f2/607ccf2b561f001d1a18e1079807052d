@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 align="center">Spring MVC Form</h2>
+<ul>
+	<li>NAME <input type="text" name="name"></li>
+	<li>ADDR <input type="text" name="addr"></li>
+	<input type="submit" value="SEND"
+</ul>
+</body>
+</html>

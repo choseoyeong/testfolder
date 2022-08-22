@@ -1,0 +1,13 @@
+package com.service.spring.domain;
+
+public class MyProduct {
+	
+	private int id;
+	private String name;
+	private String maker;
+	private int price;
+	
+	public MyProduct() {
+		
+	}
+}

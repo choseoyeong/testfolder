@@ -1,0 +1,42 @@
+package com.service.spring.test;
+
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+
+import com.service.spring.domain.MyProduct;
+
+public class MyBatisFrameworkJUnitTest2 {
+	
+	@Test
+	public void unit() throws Exception{
+		//1. 설정문서를 DI Container가 읽어들여야 한다.
+		Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		
+		//2. r을 sqlSessionFactory에서
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		
+		//3. sqlSession
+		SqlSession session = factory.openSession();
+		
+//		System.out.println("==== 1. addProduct ====");
+//		
+//		MyProduct vo = new MyProduct("공기방울 세탁기", "삼성", 380000);
+//		int result = session.insert("ns.sql.MyProductMapper.addProduct", vo);
+//		
+//		session.commit(); // 아직 spring이랑 연결 안됐기 때문에 필수
+//		System.out.println(result + "개 상품 추가 성공^^");
+		
+		System.out.println("==== 1. addProduct ====");
+		List<MyProduct> result = session.selectList("ns.sql.MyProductMapper.findProductByName", "세탁기");
+		System.out.println(result);
+		
+		List<MyProduct> result = session.selectList("ns.sql.MyProductMapper.findProductByName", "세탁기");
+		System.out.println(result);
+	}
+}

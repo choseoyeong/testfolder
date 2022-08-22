@@ -1,0 +1,27 @@
+package com.service.spring.test;
+
+import java.io.IOException;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.service.spring.domain.MyProduct;
+
+public class MyBatisFrameworkUnitTest {
+	public static void main(String[] args) throws Exception {
+		//1. 설정문서를 DI Container가 읽어들여야 한다.
+		Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		
+		//2. r을 sqlSessionFactory에서
+		SqlSessionFactory factory = new SqlSessionFactory().build(r);
+		
+		//3. sqlSession
+		SqlSession session = factory.openSession();
+		
+		System.out.println("==== 1. addProduct ====");
+		
+		MyProduct vo = new MyProduct("통돌이 세탁기", "대우", 500000);
+		session.insert("ns.sql.MyProductMapper.addProduct", vo)
+	}
+}

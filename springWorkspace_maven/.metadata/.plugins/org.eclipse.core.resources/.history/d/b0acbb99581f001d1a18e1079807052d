@@ -1,0 +1,38 @@
+package com.service.spring.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.omg.CORBA.Request;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class FormController {
+
+	// "form.do"라는 이름으로 요청이 들어오면
+	@RequestMapping("form.do")
+	public ModelAndView form(HttpServletRequest request) {
+		
+		/*
+		 * 1. 폼값 받아서
+		 * 2. VO 생성
+		 * 3. Service 받아와서
+		 * 4. service.registerForm(); --> dao.register(); --> sqlSession.insert("mapper.addRegister")
+		 * 5. ModelAndView 생성
+		 */
+		
+		String name = request.getParameter("name");
+		String addr = request.getParameter("addr");
+		
+		/*
+		 * form_result는 결과 페이지 이름
+		 * form_resut.jsp 라는 이름으로
+		 * WEB-INF<views< 에 저장됨
+		 *  
+		 */
+		
+		return new ModelAndView("form_result", "info", name + " 님이 사는 곳은 " + addr);
+	}
+	
+}

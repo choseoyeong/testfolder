@@ -1,0 +1,24 @@
+package com.service.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class FormController {
+
+	// "form.do"라는 이름으로 요청이 들어오면
+	@RequestMapping("form.do")
+	public ModelAndView form() {
+		
+		/*
+		 * 1. 폼값 받아서
+		 * 2. VO 생성
+		 * 3. Service 받아와서
+		 * 4. 
+		 * 
+		 */
+		
+		return null;
+	}
+	
+}

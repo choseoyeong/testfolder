@@ -1,0 +1,11 @@
+package com.service.spring.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MyProductServiceImpl implements MyProductService{
+	
+	@Autowired
+	private MyProductDAO myProductDAO;
+}

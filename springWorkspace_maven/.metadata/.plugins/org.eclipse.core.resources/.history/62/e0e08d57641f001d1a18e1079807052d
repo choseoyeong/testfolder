@@ -1,0 +1,13 @@
+package com.service.spring.test;
+
+import java.io.IOException;
+
+import org.apache.ibatis.io.Resources;
+
+public class MyBatisFrameworkUnitTest {
+	public static void main(String[] args) throws Exception {
+		//1. 설정문서를 DI Container가 읽어들여야 한다.
+		Reader r Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		
+	}
+}

@@ -1,0 +1,12 @@
+package com.service.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {	// POJO
+	@RequestMapping("main.do")
+	public ModelAndView main() {
+		return null;
+	}
+}

@@ -1,0 +1,28 @@
+package com.service.spring.domain;
+
+public class MyProduct {
+	
+	private int id;
+	private String name;
+	private String maker;
+	private int price;
+	
+	public MyProduct() { }
+
+	public MyProduct(int id, String name, String maker, int price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.maker = maker;
+		this.price = price;
+	}
+
+	public MyProduct(String name, String maker, int price) {
+		super();
+		this.name = name;
+		this.maker = maker;
+		this.price = price;
+	}
+	
+	
+}

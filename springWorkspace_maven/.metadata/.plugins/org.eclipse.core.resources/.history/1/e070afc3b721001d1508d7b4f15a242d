@@ -1,0 +1,47 @@
+package com.service.spring.test;
+
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+
+import com.service.spring.domain.MyProduct;
+
+public class MyBatisFrameworkJUnitTest2 {
+	
+	@Test
+	public void unit() throws Exception{
+		//1. 설정문서를 DI Container가 읽어들여야 한다.
+		Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		
+		//2. r을 sqlSessionFactory에서
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		
+		//3. sqlSession
+		SqlSession session = factory.openSession();
+		
+//		System.out.println("==== 1. addProduct ====");
+//		
+//		MyProduct vo = new MyProduct("공기방울 세탁기", "삼성", 380000);
+//		int result1 = session.insert("ns.sql.MyProductMapper.addProduct", vo);
+//		
+//		session.commit(); // 아직 spring이랑 연결 안됐기 때문에 필수
+//		System.out.println(result1 + "개 상품 추가 성공^^");
+		
+		System.out.println("==== 2. findProductByName ====");
+		List<MyProduct> result2 = session.selectList("ns.sql.MyProductMapper.findProductByName", "세탁기");
+		System.out.println(result2);
+		
+		System.out.println("==== 3. findProductByMaker ====");
+		List<MyProduct> result3 = session.selectList("ns.sql.MyProductMapper.findProductByMaker", "대우");
+		System.out.println(result3);
+		
+		System.out.println("==== 4. findProducts ====");
+		List<MyProduct> result4 = session.selectList("ns.sql.MyProductMapper.findProductByMaker", "대우");
+		System.out.println(result4);
+	}
+}

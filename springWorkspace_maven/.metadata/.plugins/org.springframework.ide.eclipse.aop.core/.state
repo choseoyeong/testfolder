@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="spring03_form"/>
+<aop-project name="spring01_mvc"/>
+<aop-project name="spring02_mvc"/>
+<aop-project name="spring05_product_dynamic"/>
+<aop-project name="spring04_product"/>
+<aop-project name="spring06_viewResolver"/>
+</aop-reference-model>
