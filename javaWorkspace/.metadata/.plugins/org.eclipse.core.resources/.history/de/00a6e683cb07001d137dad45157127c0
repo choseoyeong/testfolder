@@ -1,0 +1,67 @@
+package com.edu.capsul;
+/*
+ * Encapsulation 
+ * ::
+ * month는 1~12까지의 값만 받도록 로직을 작성
+ * day는 month에 따라서 받아들이는 값이 달라진다.
+ * 1,3,5,7,8,10,12월은 1~31일
+ * 4,6,9,11월은 1~30일
+ * 2월 1~28일 까지의 값만 받도록 작성
+ */
+public class MyDate {
+	private int month;
+	private int day;
+	private int valid = 0;
+	
+	public int getValid() {
+		return valid;
+	}
+	
+	public int getMonth() {
+		return month;
+	}
+	public void setMonth(int month) {
+		// 필드 초기화 직전에 valid한 값이 할당되도록 제어문을 달아준다.
+		if(month>=1 & month<=12) {
+			this.month = month;
+			valid++;
+		}
+		else
+			System.out.println("INVALID MONTH VALUE");
+	}
+	public int getDay() {
+		return day;
+	}
+	public void setDay(int day) {
+		int max = 0;
+		
+		switch(month) {
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12: 
+				max = 31;
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				max = 30;
+				break;
+			case 2:	
+				max = 28;
+				break;
+			default:
+		}
+		
+		if(day>=1 && day<=max) {
+			this.day = day;
+			valid++;
+		}
+		else
+			System.out.println("INVALID DAY VALUE");
+	}
+}

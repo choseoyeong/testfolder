@@ -1,0 +1,85 @@
+package com.edu.self.service;
+
+import com.edu.self.vo.Employee;
+import com.edu.self.vo.Engineer;
+import com.edu.self.vo.Manager;
+
+public class EmployeeServiceImpl implements EmployeeService{
+	// 싱글톤
+	private static EmployeeServiceImpl service = new EmployeeServiceImpl();
+	private EmployeeServiceImpl() {}
+	public static EmployeeServiceImpl getInstance() {
+		return service;
+	}
+	
+	Manager[ ] ms;
+	int midx;
+	
+	Engineer[ ] egs;
+	int egidx;	
+
+
+	@Override
+	public void addEmployee(Employee[] employees, Employee e) {
+		System.out.println("start1");
+		
+		employees[2] = (Manager)e;
+		
+//		if(e instanceof Manager)
+//			ms[midx++] = (Manager) e;
+//		else if(e instanceof Engineer)
+//			egs[egidx++] = (Engineer) e;
+		System.out.println("end1");
+	}
+
+
+	@Override
+	public void deleteEmployee(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateManager(double salary, String dept, int deptno, String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateEngineer(Employee e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Manager findManager(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Manager[] findManager(int deptno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Engineer findEngineer(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void printManagers() {
+		for(Manager m: ms)
+			System.out.println(m.getDetails());
+		
+	}
+
+	@Override
+	public void printEngineers() {
+		for(Engineer e: egs)
+			System.out.println(e.getDetails());
+	}
+
+}

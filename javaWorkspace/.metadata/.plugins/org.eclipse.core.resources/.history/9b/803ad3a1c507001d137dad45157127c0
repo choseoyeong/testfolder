@@ -1,0 +1,15 @@
+package com.edu.capsul.test;
+
+import com.edu.capsul.MyDate;
+
+public class MyDateTest {
+
+	public static void main(String[] args) {
+		MyDate md = new MyDate();
+		md.month = 30;
+		md.day = 100;
+		System.out.println();
+
+	}
+
+}

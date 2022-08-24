@@ -1,0 +1,14 @@
+package com.edu.operator.test;
+
+public class OperatorTest {
+
+	public static void main(String[] args) {
+		// Local 변수...main 안에서 선언
+		int i = 5;
+		int j = 3;
+		
+		
+
+	}
+
+}

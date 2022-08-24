@@ -1,0 +1,18 @@
+package com.edu.capsul.test;
+
+import com.edu.capsul.MyDate;
+
+public class MyDateTest {
+
+	public static void main(String[] args) {
+		MyDate md = new MyDate();
+		
+		// invalid한 값. 이래서 필드에 직접적으로 접근 못하게 해야함
+		md.month = 30;
+		md.day = 100;
+		
+
+
+	}
+
+}

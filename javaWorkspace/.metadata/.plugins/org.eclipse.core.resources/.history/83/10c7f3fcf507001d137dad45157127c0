@@ -1,0 +1,47 @@
+package com.edu.array.service;
+
+import com.edu.array.vo.Product;
+
+// Product들을 핸들링하는 서비스 클래스...
+// 기능들로만 구성되어져 있다.
+/*
+ * 1) 모든 상품들의 maker를 출력하는 기능
+ * 2) 상품들의 총 금액을 리턴하는 기능
+ * 3) 특정금액 이상의 상품들을 리턴하는 기능
+ * 4) 동일한 회사의 제품들만 리턴하는 기능
+ * 5) 구입한 상품들의 평균가를 리턴하는 기능---(Quantity 포함)
+ * 
+ * ☆선언부(identifier, 인자, return type)☆ 먼저 작성하고 구현부 작성하기
+ */
+public class ProductService {
+	
+	public void printMaker(Product[] pros) {
+		System.out.println("======모든 상품의 Maker를 출력합니다.======\n");
+		for(Product p: pros)
+			System.out.println(p.getMaker());
+	}
+	
+	public int getTotalPrice(Product[] pros) {
+		System.out.println("======상품들의 총 금액을 출력합니다.======\n");
+		int total = 0;
+		for(Product p: pros)
+			total += p.getPrice() * p.getQuantity();
+		
+		return total;
+	}
+	
+	public Product[] getMoreExpensive(Product[] pros, int price) {
+		System.out.println("======모든 상품의 Maker를 출력합니다.======\n");
+		return pros;
+	}
+	
+	public Product[] getSameCompany(Product[] pros, String company) {
+		System.out.println("======모든 상품의 Maker를 출력합니다.======\n");
+		return pros;
+	}
+	
+	public int getAveragePrice(Product[] pros) {
+		System.out.println("======모든 상품의 Maker를 출력합니다.======\n");
+		return 0;
+	}
+}

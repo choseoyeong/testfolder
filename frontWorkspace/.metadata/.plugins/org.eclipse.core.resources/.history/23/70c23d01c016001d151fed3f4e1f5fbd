@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#p1{
+		border: 2px solid tomato;	
+	}
+	
+	#p2{
+		border: 2px solid tomato;
+	}
+</style>
+</head>
+
+<body>
+<h2>The border-radius Property :: 25px</h2>
+<div id="p1">
+	<p class="round1">Round border</p>
+</div>
+
+<h2>The border-radius Property :: 20px</h2>
+<div id="p2">
+	<p class="round2">Rounder border</p>
+</div>
+</body>
+</html>

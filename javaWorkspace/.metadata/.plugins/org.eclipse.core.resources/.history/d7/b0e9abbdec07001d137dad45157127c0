@@ -1,0 +1,12 @@
+package com.edu.bank.test;
+
+import com.edu.bank.Account;
+
+public class BankArrayTest2 {
+	public static void main(String[] args) {
+		Account[] accounts = {
+				
+		}
+	}
+
+}

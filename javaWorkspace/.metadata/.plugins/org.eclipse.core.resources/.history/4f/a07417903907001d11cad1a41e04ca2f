@@ -1,0 +1,29 @@
+package com.bank.busan;
+
+public class Account {
+	public int accNumber;
+	public String CustName;
+	public double balance;
+	public String bankName;
+	
+	public double getBalance() {
+		
+	}
+	
+	public void withdraw(double amt) {
+		
+	}
+	
+	public void deposit(double amt) {
+		
+	}
+	
+	public String getAccountInfo() {
+		
+	}
+	
+	public String getBankName() {
+		
+	}
+	
+}

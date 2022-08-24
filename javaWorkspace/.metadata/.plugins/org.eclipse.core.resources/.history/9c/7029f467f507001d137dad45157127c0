@@ -1,0 +1,24 @@
+package com.edu.array.test;
+import com.edu.array.service.ProductService;
+// Product
+import com.edu.array.vo.Product;
+
+public class ProductServiceTest2 {
+	public static void main(String[] args) {
+		Product[] pros = {
+				new Product("신라면", 12000, 5, "농심"),
+				new Product("새우깡", 1000, 2, "농심"),
+				new Product("옥시크린", 32000, 1, "CJ"),
+				new Product("삼다수", 800, 10, "제주")
+		};
+		
+		// 객체 생성 
+		ProductService service = new ProductService();
+		
+		// service라는 참조변수를 이용해서 구현한 기능을 하나씩 호출합니다...
+		
+		
+		service.printMaker(pros);
+		
+	}
+}

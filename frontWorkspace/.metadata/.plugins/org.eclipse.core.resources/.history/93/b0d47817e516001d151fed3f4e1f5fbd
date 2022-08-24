@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>익명 함수 재정의 동작원리..1</title>
+<script>
+	var func = function(x, y) {
+		return x+y;
+	}
+	console.log(calc(5, 3));	// 15..
+	// 선언적 함수이므로 순서대로 실행되는게 아님
+	// 곱셈 함수가 더 마지막에 올라갔으므로 결과는 15임
+	
+	function calc(x, y) {
+		return x*y;
+	}
+	console.log(calc(5, 3));
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

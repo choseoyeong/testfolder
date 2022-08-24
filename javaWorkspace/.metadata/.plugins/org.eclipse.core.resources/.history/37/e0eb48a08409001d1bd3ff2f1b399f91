@@ -1,0 +1,38 @@
+package com.edu.compile.test;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+class FileReading3 {
+	public void readFile(String fileName) throws FileNotFoundException, IOException {
+		// 파일안의 내용을 읽어들이는 로직을 작성..
+		FileReader fr = null;
+		
+		try {
+			fr = new FileReader(fileName);				
+			System.out.println("1. FileReader Creating...");		
+		} finally {
+			fr.close();
+		}
+		System.out.println("2. file...end...");
+		
+	}
+}
+
+public class CompileExceptionTest3 {
+	public static void main(String[] args) {
+		FileReading3 fr = new FileReading3();
+		String fileName = "C:\\bnk_jsy\\util\\eclipse-jee-photon-R-win32-x86_64.zip";
+		try {
+			fr.readFile(fileName);
+		} catch (FileNotFoundException e) {
+			System.out.println("FileNotFound Catch..");
+		} catch (IOException e) {
+			System.out.println("FileNotFound Catch..");
+		}
+		System.out.println("3. 파일을 잘 읽어들였습니다..");
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.edu.collection.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListTest3 {
+	public static void main(String[] args) {
+		// == ArrayList<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<>();
+		list.add("강호동");
+		list.add("이수근");
+		list.add("서장훈");
+		list.add("김영철");
+		list.add("이수근");
+		
+		System.out.println(list);
+		
+		// 3번째 사람 삭제...누가 삭제되었는지 출력
+		String removePerson1 = list.remove(2);
+		System.out.println(removePerson1 + "님이 삭제되었습니다.");
+		System.out.println(list);
+		
+		// 가장 첫번째에 아이유를 추가
+		list.add(0, "아이유");
+		System.out.println(list);
+	}
+
+}

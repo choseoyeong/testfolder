@@ -1,0 +1,25 @@
+INDEX VERSION 1.131
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2886404955.index
+\front04_JQuery\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1045163166.index
+\front08_Fruit\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\207398618.index
+\aMyTest\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2086219812.index
+\front10_Framework_LIB\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2425583948.index
+\front06_Ajax\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1175747045.index
+\front03_Javascript\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1445512221.index
+\front09_FruitCookie\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4191018178.index
+\front07_JQueryUI\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3219045524.index
+\front04_JQuery\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3237344229.index
+\front10_Framework_LIB\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3535295777.index
+\front04_JQuery\src
+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\165690540.index
+\front07_JQueryUI\src

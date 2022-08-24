@@ -1,0 +1,102 @@
+package com.edu.self.service;
+
+import com.edu.self.vo.Employee;
+import com.edu.self.vo.Engineer;
+import com.edu.self.vo.Manager;
+
+public class EmployeeServiceImpl implements EmployeeService{
+	public final static int MAXLEN = 20;
+	
+	// 싱글톤
+	private static EmployeeServiceImpl service = new EmployeeServiceImpl();
+	private EmployeeServiceImpl() {}
+	public static EmployeeServiceImpl getInstance() {
+		return service;
+	}
+	
+	Employee[ ] es = new Employee[MAXLEN];
+	int emidx;
+	
+//	Manager[ ] ms = new Manager[MAXLEN];
+//	int midx;
+//	
+//	Engineer[ ] egs = new Engineer[MAXLEN];;
+//	int egidx;	
+
+
+	@Override
+	public void addEmployee(Employee e) {
+		es[emidx++] = e;
+	}
+
+
+	@Override
+	public void deleteEmployee(String name) {
+		for(int i=0; i<emidx; i++) {
+			if(es[i].getName().equals(name)) {
+				for(int j=i; j<emidx; j++) {
+					es[j] = es[j+1];
+				}
+				es[emidx] = null;
+				emidx--;
+			}
+		}
+	}
+
+	@Override
+	public void updateManager(double salary, String dept, int deptno, String name) {
+		for(Employee e : es) {	
+			if(e==null) continue;
+			if(e.getName().equals(name)) {
+				e.setSalary(salary);
+				((Manager)e).setDept(dept);	
+				((Manager)e).setDeptno(deptno);				
+			}			
+		}
+	}
+
+	@Override
+	public void updateEngineer(String tech, double bonus, String name) {
+		for(Employee e: es) {	
+			if(e==null) continue;
+			if(e.getName().equals(name)) {
+				((Engineer)e).setTech(tech);	
+				((Engineer)e).setBonus(bonus);				
+			}			
+		}
+	}
+
+	@Override
+	public Manager findManager(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Manager[] findManager(int deptno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Engineer findEngineer(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void printManagers() {
+		for(Employee e: es)
+			if(e instanceof Manager)
+				System.out.println(e.getDetails());
+		
+	}
+
+	@Override
+	public void printEngineers() {
+		for(Employee e: es)
+			if(e instanceof Engineer)
+				System.out.println(e.getDetails());
+	}
+
+}

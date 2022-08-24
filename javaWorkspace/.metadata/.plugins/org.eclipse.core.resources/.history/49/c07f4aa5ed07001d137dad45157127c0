@@ -1,0 +1,25 @@
+package com.edu.bank.test;
+
+import com.edu.bank.Account;
+import com.edu.bank.Customer;
+
+public class BankArrayTest2 {
+	public static void main(String[] args) {
+		Account[] accounts = {
+			new Account(10000, "부산은행"),
+			new Account(20000, "국민은행"),
+			new Account(30000, "신한은행")
+		};
+		
+		Customer james = new Customer(111, "James");
+		
+		// 1. James가 3개의 통장을 개설...부산, 국민, 신한은행
+		james.setAccount(accounts);
+		
+		// 2. James가 개설한 통장중에서 부산은행 통장을 받아온다.
+		
+		
+		
+	}
+
+}

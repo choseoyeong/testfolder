@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="servlet.controller.ControllerFactory"/>
+<fullyQualifiedTypeName name="servlet.controller.Controller"/>
+<fullyQualifiedTypeName name="com.oracle.jrockit.jfr.RequestDelegate"/>
+<fullyQualifiedTypeName name="servlet.controller.ModelAndView"/>
+<fullyQualifiedTypeName name="com.bnk.model.ItemDao"/>
+<fullyQualifiedTypeName name="com.bnk.model.Item"/>
+<fullyQualifiedTypeName name="com.bnk.controller.ModelAndView"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.Controller"/>
+<fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.Class.Member"/>
+<fullyQualifiedTypeName name="servlet.model.MemberDAOImpl"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+</qualifiedTypeNameHistroy>

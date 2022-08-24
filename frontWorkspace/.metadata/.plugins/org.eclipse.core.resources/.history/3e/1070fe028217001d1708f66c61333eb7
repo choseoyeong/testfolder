@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function checkAge() {
+		var age = //나이를 입력하는 폼을 할당
+		/*
+		 1. 폼에 입력된 값이 없다면 ..."나이는 반드시 입력하세요" 메세지 띄우기
+		 
+		
+		
+		 */
+	}
+</script>
+</head>
+<body>
+	<form name="ageForm">
+		나이 <input type="text" name="age">
+		<button onclick="checkAge()">나이 확인</button>
+	</form>
+</body>
+</html>

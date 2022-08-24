@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	자바스크립트에서 제공하는 기본 데이터 타입
+	(기본형) 
+	number
+	string
+	boolean
+	
+	객체형
+	함수형
+	undefined	
+-->
+<script>
+	<!-- 
+		java는 변수 선언과 동시에 타입을 선언하지만, javaScript는 타입 선언 따로 안함 
+		1. 공간 할당
+		2. 값 할당
+		3. 그 결과로 stringvar 변수 타입이 String으로 결정됨
+	--> 
+	var variable;
+	var stringvar = "String";
+	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

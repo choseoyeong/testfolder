@@ -1,0 +1,27 @@
+package com.edu.child;
+
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+// Child Class..
+public class Manager extends Employee{
+	
+	private String dept;
+	/*
+	 * Manager() {} ---> 자식생성자...자식 객체가 만들어진다...
+	 * 자식이 만들어지기 위해서는 반드시 부모가 먼저 만들어져야 한다.
+	 * 
+	 * 자식 생성자 {
+	 * 	첫 라인에서는 반드시 super(); 가 나온다...부모를 생성하겠다는 코드
+	 * 이왕 부모가 만들어질거... 디폴트로 만들지 말고, 값을 우리가 넣어서 만들자.
+	 * => super(name, salary, birthday);
+	 * +
+	 * 자식만의 멤버는 this로 초기화한다.
+	 */
+
+	public Manager(String name, double salary, MyDate birthday, String dept) {
+		super(name, salary, birthday);
+		this.dept = dept;
+	}
+	
+}

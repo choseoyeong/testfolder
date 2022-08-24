@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+		h2{ margin-left:60px;}
+		#calc{
+			border:1px solid gray;
+			width:350px;
+			text-align: center;
+		}
+		#formula{
+			text-align: right;
+			width:80%;
+			margin-top:10px;
+			margin-bottom:20px;
+		}
+		#resultDiv{
+			text-align: left;
+			margin-left:40px;
+		}
+		button{
+			width:70px;
+			height:70px;
+		}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h2>Encore Calculator</h2><p></p>
+	<div id="calc">
+		<input type="text" id="formula" value="" placeholder="0.0" readonly/>
+		<div id="pad">
+			<!--<button onclick="addNum(7)">7</button>
+			<button onclick="addNum(8)">8</button>
+			<button onclick="addNum(9)">9</button>
+			<button onclick="addOper('+')">+</button>
+			<button onclick="addNum(4)">4</button>
+			<button onclick="addNum(5)">5</button>
+			<button onclick="addNum(6)">6</button>
+			<button onclick="addOper('-')">-</button>
+			<button onclick="addNum(1)">1</button>
+			<button onclick="addNum(2)">2</button>
+			<button onclick="addNum(3)">3</button>
+			<button onclick="addOper('*')">*</button>
+			<button onclick="addNum(0)">0</button>
+			<button onclick="reset()">CE</button>
+			<button onclick="calc()">=</button>
+			<button onclick="addOper('/')">/</button>-->
+			<button name="btnNum" id="btn7">7</button>
+			<button name="btnNum" id="btn8">8</button>
+			<button name="btnNum" id="btn9">9</button>
+			<button name="btnOper" id="btnPlus">+</button>
+			<button name="btnNum" id="btn4">4</button>
+			<button name="btnNum" id="btn5">5</button>
+			<button name="btnNum" id="btn6">6</button>
+			<button name="btnOper" id="btnMinus">-</button>
+			<button name="btnNum" id="btn1">1</button>
+			<button name="btnNum" id="btn2">2</button>
+			<button name="btnNum" id="btn3">3</button>
+			<button name="btnOper" id="btnMlt">*</button>
+			<button name="btnNum" id="btn0">0</button>
+			<button name="btnCE" id="btnCE">CE</button>
+			<button name="btnEqual" id="btnEqual">=</button>
+			<button name="btnOper" id="btnDiv">/</button>
+		</div>
+		<div id="resultDiv">
+			<h2>결 과 이 력</h2>
+			<p id="result"></p>
+		</div>
+	</div>
+<script type="text/javascript">
+	$(function() {
+		var str = $('#formula').val();
+		var preIsNum = true;
+	
+		// 숫자 입력
+		$('button[name=btnNum]').on('click', function () {
+    		var cur = $('#formula').val();
+    		var num = $(this).text();
+    		
+    		$('#formula').val(cur+num);
+		});
+		
+		$('button[name=btnOper]').on('click', function () {
+    		if(preIsNum == false) return ;
+    		str += $(this).text();
+    		preIsNum = false;
+		});
+		
+		// 숫자 출력 영역에 아무 값도 없을 때 0.0을 표시
+		$('button[name=btnCE]').on('click', function () {
+    		$('#formula').val("");
+		});
+		
+		
+	
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+package com.edu.self.vo;
+
+import com.edu.self.util.MyDate;
+
+public class Employee {
+	private String name;
+	private MyDate birthDate;
+	private double salary;
+
+	private final static double BASIC_SALARY = 100;
+	private final static String BASIC_NAME = "홍길동";  
+	
+	public Employee() {}
+	
+	public Employee(String name, MyDate birthDate, double salary) {
+		super();
+		this.name = name;
+		this.birthDate = birthDate;
+		
+	}
+	
+	public Employee(String name, MyDate birthDate) {
+		super();
+		this.name = name;
+		this.birthDate = birthDate;
+	}
+	
+	public Employee(MyDate birthDate, double salary) {
+		super();
+		this.birthDate = birthDate;
+		this.salary = salary;
+	}
+	
+}

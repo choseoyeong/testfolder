@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자, onload함수</title>
+<script>
+	window.onload = function(){;
+	var list = '';	// string
+	
+	// 1. 복합연산자 사용
+	// 완성한 걸 최종적으로 body에 넘겨서 쓰면 좋음
+	list += '<ul>';
+	list += '<li>Hello</li>';
+	list += '<li>JavaScript!!</li>';
+	list += '</ul>';
+	
+	// 2. html 특정 태그를 받아와서 그 부분에 출력이 되도록 한다.
+	// <div id="wrap">에 list를 저장함을 의미
+	document.getElementById("wrap").innerHTML = list;
+	};	
+</script>
+</head>
+
+<body>
+<h2 align="center">==============onload================</h2>
+<div id="wrap">
+
+</div>
+
+</body>
+</html>

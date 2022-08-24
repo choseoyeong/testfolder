@@ -1,0 +1,11 @@
+package com.edu.array.service;
+
+import com.edu.array.vo.Customer;
+import com.edu.array.vo.Product;
+
+public class ProductOutletService {
+	// 1. 특정 고객이 구입한 상품을 리턴..
+	public Product[] getProducts(Customer cust) {		
+		return cust.getProducts();
+	}
+}

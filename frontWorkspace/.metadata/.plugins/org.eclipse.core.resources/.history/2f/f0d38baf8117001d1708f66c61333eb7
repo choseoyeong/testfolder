@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function checkAge() {
+	
+	}
+</script>
+</head>
+<body>
+	<form name="ageForm">
+		나이 <input type="text" name="age">
+		<button onclick="checkAge()">나이 확인</button>
+	</form>
+</body>
+</html>

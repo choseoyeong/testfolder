@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  /*
+ 	tab을 클릭했을 때 정적인 데이터가 출력이 되고 있다.
+ 	tab을 클릭했을 때 서버로 요청이 들어가고 서버가 프로그램을 실행한 결과 페이지의 내용이 출력돼야 한다.
+  */
+  $( function() {
+  
+    $( "#tabs" ).tabs();
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">현재 폭우 상황</a></li>
+    <li><a href="#tabs-2">중국 반도체 시장</a></li>
+    <li><a href="#tabs-3">스포츠 지금은</a></li>
+  </ul>
+</div>
+
+</body>
+</html>

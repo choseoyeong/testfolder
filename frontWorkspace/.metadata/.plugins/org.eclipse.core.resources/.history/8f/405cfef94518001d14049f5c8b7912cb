@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#eachBtn').click(function() {//버튼을 클릭하면 배열을 생성...
+		var array = [ ];		//선언과 생성
+		array.push('염미정');
+		array.push('구자경');
+		array.push('염창희');
+		array.push('우영우');
+		
+		//alert(array.length);	// 4..배열인지 확인하고 싶을 땐 길이를 찍어보기
+		//alert(array.toString());
+		
+		// 1. for문을 사용해서 배열안에 있는 데이터를 alert 창으로 출력
+		/*
+		var result = "";
+		for(var i=0; i<array.length; i++) {
+			result += array[i] + ' ';
+		}
+		alert(result); 
+		*/
+		
+		//2. each() 함수 사용..
+		
+	});//click
+});
+</script>
+</head>
+<body>
+	<input type="button" value="배열에 each() 적용" id="eachBtn">	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+package com.edu.self.service;
+import com.edu.self.vo.Engineer;
+import com.edu.self.vo.Manager;
+
+public interface EmployeeService {
+//	public EmployeeService(int size);
+	void addManager(Manager m);
+	void addEngineer(Engineer eg);
+	void deleteManager(String name);
+	void deleteEngineer(String name);
+	void updateManager(double salary, String dept,int deptno,  String name);
+	void updateEngineer(Engineer eg);
+	
+	//Method Overloading
+	Manager findManager(String name);
+	Manager[ ] findManager(int deptno);
+	Engineer findEngineer(String name);
+	void printManagers();
+	void printEngineers();
+}
+
+
+
+
+
+
+

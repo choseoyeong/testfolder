@@ -1,0 +1,28 @@
+package servlet.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("*.do")
+public class DispatcherServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L; 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doProcess(request, response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doProcess(request, response);
+	}
+
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// hidden 값으로 요청을 받지 않고...들어온 요청의 전체 주소를 그냥 받는다.
+		String requestURI = request.getRequestURI(); 	// contextPath/subject.do
+		System.out.println("requestURI: " + requestURI);
+		
+		String contextPath = request.getContextPath();
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.bank.busan;
+
+public class Account {
+	public int accNumber;
+	public String CustName;
+	public double balance;
+	public String bankName;
+}

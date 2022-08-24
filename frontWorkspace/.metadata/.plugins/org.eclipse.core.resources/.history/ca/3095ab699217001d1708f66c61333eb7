@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		// 1. h2태그와 p태그를 모두 선택자로 지정...글자색을 모두 purple로 지정..
+		$('h2, p').css('color', 'tomato');	// css('속성이름', '속성값')
+	});
+</script>
+</head>
+<body>
+	<h2 id="header">This is a heading</h2>
+	
+	<p>This is a paragraph.</p>
+	<p class="content">This is another paragraph1.</p>
+	<p class="content theme">This is another paragraph2.</p>
+	
+	<button>Click me to hide paragraphs</button>
+</body>
+</html>

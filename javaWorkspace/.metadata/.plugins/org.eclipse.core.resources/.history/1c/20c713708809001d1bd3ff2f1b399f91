@@ -1,0 +1,19 @@
+package com.edu.user.test;
+
+class UnderAgeBoom {
+	
+}
+
+class AdultMovieService {	// 성인영화 관람서비스..
+	public void entrance(int age) {
+		if(age >= 19) System.out.println("Ticketing OK...Enter!!");
+		else throw new UnderAgeBoom();
+	}
+}
+
+public class UserExceptionTest {
+	public static void main(String[] args) {
+		
+	}
+
+}

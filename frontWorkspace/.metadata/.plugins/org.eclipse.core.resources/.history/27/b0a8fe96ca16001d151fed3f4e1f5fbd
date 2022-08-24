@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#parent{
+		border: 1px solid black;
+		padding: 10px;
+	}
+	#child{
+		border: 1px solid tomato;
+		margin: 0px;
+		float: left;
+	}
+	
+	/*
+		자식요소에서 float 요소 사용 시
+		부모요소의 범위를 벗어나게 된다.
+		1. 부모 요소의 범위를 아주 크게 잡는다. -> X 
+		2. overflow를 지정한다. (hidden으로 지정)
+	
+	*/
+	
+</style>
+</head>
+<body>
+
+<div id="parent">
+	<div id="section">
+		부산은행 연수원 과정 진행중
+	</div>
+</div>
+<div id="child">
+	2022-08-08 FrontUI 오늘 스케줄
+</div>
+
+</body>
+</html>

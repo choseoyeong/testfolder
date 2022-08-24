@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>The border-radius Property :: 25px</h2>
+<div>
+	<p class="round1">Round border</p>
+</div>
+
+<h2>The border-radius Property :: 20px</h2>
+<div>
+	<p class="round2">Rounder border</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Fri Aug 12 17:24:07 KST 2022
+org.eclipse.jst.jee.server\:front04_JQuery=C\:\\bnk_jsy\\apache-tomcat-8.5.81\\webapps\\front04_JQuery
+org.eclipse.jst.jee.server\:front10_Framework_LIB=C\:\\bnk_jsy\\apache-tomcat-8.5.81\\webapps\\front10_Framework_LIB
+org.eclipse.jst.jee.server\:aMyTest=C\:\\bnk_jsy\\apache-tomcat-8.5.81\\webapps\\aMyTest

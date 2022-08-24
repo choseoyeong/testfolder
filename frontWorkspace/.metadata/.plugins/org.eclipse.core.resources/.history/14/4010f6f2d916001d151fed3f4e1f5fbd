@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	자바스크립트에서 제공하는 기본 데이터 타입
+	(기본형) 
+	number
+	string
+	boolean
+	
+	객체형
+	함수형
+	undefined	
+-->
+<script>
+	//  
+	var variable;
+	var stringvar = "String";
+	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

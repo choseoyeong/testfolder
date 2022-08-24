@@ -1,0 +1,7 @@
+package com.edu.array.test;
+
+public class ProductArrayTest1 {
+	public static void main(String[] args) {
+		
+	}
+}

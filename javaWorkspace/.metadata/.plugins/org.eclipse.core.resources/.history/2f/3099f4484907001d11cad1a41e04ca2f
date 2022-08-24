@@ -1,0 +1,52 @@
+package com.bank.busan;
+
+public class Account {
+	public int accNumber;
+	public String custName;
+	public double balance;
+	public String bankName;
+	
+	public Account(int accNumber,
+				String custName,
+				double balance,
+				String bankName) {
+		this.accNumber = accNumber;
+		this.custName = custName;
+		this.balance = balance;
+		this.bankName = bankName;
+	}
+	
+	public double getBalance() {
+		return balance;
+	}
+	
+	public void withdraw(double amt) {
+		if(balance < amt) 
+			System.out.println("잔액이 부족합니다.");
+		else {
+			balance -= amt;
+		}
+			
+	}
+	
+	public void deposit(double amt) {
+		if(amt < 1000)
+			System.out.println("1000원부터 입금이 가능합니다.");
+		else {
+			balance += amt;
+		}
+			
+	}
+	
+	public String getAccountInfo() {
+		return "AccountInfo:: " + accNumber 
+								+ "\t" + custName
+								+ "\t" + balance
+								+ "\t" + bankName;
+	}
+	
+	public String getBankName() {
+		return bankName;
+	}
+	
+}

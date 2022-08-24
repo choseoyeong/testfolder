@@ -1,0 +1,26 @@
+package com.edu.collection.test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/*
+ * 		Set
+ * 		 |
+ * 	  HashSet
+ * 
+ * 	Unique한 것들만 저장함
+ *  순서는 없다
+ */
+public class HashSetTest2 {
+	public static void main(String[] args) {
+		Set<String> set = new HashSet<>();	// == new HashSet<String>();
+		set.add("구자경");
+		set.add("염미정");
+		set.add("염창희");
+		set.add("염미정");
+		
+		System.out.println(set.size());
+		System.out.println(set);
+	}
+
+}

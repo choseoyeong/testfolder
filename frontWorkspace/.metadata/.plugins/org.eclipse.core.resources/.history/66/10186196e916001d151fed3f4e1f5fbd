@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 객체 생성하기 :: {}</title>
+<script>
+	var obj1 = {name:'James', age:44, phone:'010-234-3456'};
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

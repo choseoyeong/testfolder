@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+	$(function(){
+		$('#send').one('click', function () {
+    		$.ajax({
+    			//요청
+    			type: 'get',
+    			url: 'http://localhost:8888/weather.xml',	// 데이터를 root에 넣었기 때문에 이렇게 사용 
+    			dataType: 'xml', 		// 응답하는 데이터 타입을 결정..응답 타입이 보통 타입이 아닐 때
+    			
+    			//응답
+    			success:function(result){
+    				var str = '';
+    				
+    				$(result).find('list').each(function (index, item) { // 배열.each()
+    					var region = item[0].val(); 
+    					var wind = 
+    					var rain = 
+    					var temp =
+					});	
+    			}
+    		});
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="container">
+	  <h2 align="center">====OPEN API Weather 데이터 가져오기====</h2>
+	  <p><a href="#" id="send">XML 데이터 서버로 요청하기</a></p>            
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>Region</th>
+	        <th>WIND</th>
+	        <th>RAIN</th>
+	        <th>TEMP</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <!-- 이 부분에 공공데이터 XML의 내용이 출력 -->
+	    </tbody>
+	  </table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+package test;
+
+public class GreetingTest {
+	public static void main(String[] args) {
+		System.out.println("여러분 반갑습니다.");
+
+	}
+
+}

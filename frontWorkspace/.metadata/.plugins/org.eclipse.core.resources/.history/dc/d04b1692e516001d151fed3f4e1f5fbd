@@ -1,0 +1,21 @@
+<!-- 
+	전역변수(클래스 변수)
+	(멤버변수)
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var myName = "Peter";
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

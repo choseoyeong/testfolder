@@ -1,0 +1,17 @@
+package com.bnk.controller;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class ItemViewController implements Controller {
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+		
+		
+		return null;
+	}
+
+}

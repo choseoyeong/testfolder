@@ -1,0 +1,32 @@
+package com.edu.oop2.test;
+
+import com.edu.oop2.NoteBook;
+import com.edu.oop2.Programmer;
+
+public class ProgrammerTest {
+
+	public static void main(String[] args) {
+		/*
+		 * 1. 객체 생성
+		 * 2. 메소드 호출
+		 * ------------------------------
+		 * 염미정이라는 개발자를 생성
+		 * 정보를 입력...이름, 주요기술, 주소, 급여
+		 * 염미정이 노트북을 구매(setter 개념)
+		 * 염미정이 구매한 노트북을 받아서 노트북의 정보를 출력
+		 * 최종적으로 염미정의 노트북의 브랜드를 출력
+		 */
+		
+		
+		Programmer programmer = new Programmer();
+		NoteBook notebook = new NoteBook();
+		
+		programmer.setProgrammerInfo("염미정", "Java", 3000000, "Busan");
+		notebook.setNoteBookInfo("Samsung", 1500000, 3333);
+		
+		System.out.println(notebook.getNoteBookInfo());
+		System.out.println("Brand :" + notebook.getBrand());
+
+	}
+
+}

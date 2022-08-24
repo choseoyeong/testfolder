@@ -1,0 +1,45 @@
+package com.edu.test;
+
+/*
+ * static 성질 => 시험나옴
+ * 1. static으로 지정된 멤버(field, method)는 객체생성 과정 없이 메모리에 올라간다.
+ * 2. class파일이 loader되는 시점(실행과정 초기)에 메모리(JVM)에 로더된다. 
+ * 3. static이 붙은 변수는 로컬레벨에서 사용될 수 없다.(멤버 레벨(필드 위치)에서 써야함)(멤버변수 아님)
+ * 4. static으로 지정된 변수들은 생성된 객체들이 모두 공유한다!!!
+ * 		필드		VS		로컬변수		VS		클래스변수(static)		=> 구별 가능해야함
+ * 
+ * 5. static final은 거의 함께 붙어서 사용된다. --> Usage Modifier...
+ * 		final static
+ * 
+ * 6. 싱글톤
+ * 
+ */
+
+class StaticExam {
+	//member level에서 사용해야 한다..
+	static String name = "홍길동";	// static V, class V, 전역변수
+	static int age = 19;
+	int count = 1;		// field, 멤버변수
+	
+	public static void getMember() {
+		System.out.println("우/유/빛/깔/" + name);
+		count++;			// 객체 생성 안했기때문에 못씀
+	}
+	
+	public void getMember2() {
+//		static String address = "한남동";
+		System.out.println("우/유/빛/깔/" + name);
+	}
+	
+}
+
+public class StaticExamTest1 {
+
+	public static void main(String[] args) {
+//		static String name = "홍길동";		// local level에서 사용 불가
+		
+		
+		
+	}
+
+}

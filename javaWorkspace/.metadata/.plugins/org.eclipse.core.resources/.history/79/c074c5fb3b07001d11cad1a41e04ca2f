@@ -1,0 +1,38 @@
+package com.bank.busan.test;
+
+import java.util.Scanner;
+
+import com.bank.busan.Account;
+import com.bank.busan.Customer;
+
+public class BankAppTest {
+
+	public static void main(String[] args) {
+		Customer c1 = new Customer("미정", "Busan");
+		Customer c2 = new Customer("자경", "Seoul");
+		
+		
+		Scanner sc1 = new Scanner(System.in);
+		int accNumber1 = sc1.nextInt();
+		String custName1 = sc1.next();
+		double balance1 = sc1.nextDouble();
+		String bankName1 = sc1.next();
+		
+		Account a1 = new Account(accNumber1, custName1, balance1, bankName1);
+		
+		Scanner sc2 = new Scanner(System.in);
+		int accNumber2 = sc2.nextInt();
+		String custName2 = sc2.next();
+		double balance2 = sc2.nextDouble();
+		String bankName2 = sc2.next();
+		
+		Account a2 = new Account(accNumber2, custName2, balance2, bankName2);
+		
+		
+		
+		c1.setAccount(a1);
+		c2.setAccount(a2);
+
+	}
+
+}

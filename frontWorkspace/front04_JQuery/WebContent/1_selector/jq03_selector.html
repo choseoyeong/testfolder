@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function() {
+		// 1. body의 모든 태그를 선택자로 지정...color를 purple
+		$('body *').css('color', 'purple');
+		
+		// 2. body의 직계자식을 선택자로 지정...border 2px solid tomato
+		$('body>*').css('border', '2px solid tomato');
+		// $('body *').css('border', '2px solid tomato');
+	});
+</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>Apple</li>
+			<li>Tomato</li>
+			<li>Banana</li>
+			<li>Peach</li>
+			<li>Grape</li>
+			
+		</ul>
+	</div>
+</body>
+</html>

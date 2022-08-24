@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.edu.oop&apos; to &apos;java03_inject/src/com.edu.oop&apos;&#x0D;&#x0A;- Original project: &apos;java03_inject&apos;&#x0D;&#x0A;- Destination element: &apos;java03_inject/src/com.edu.oop&apos;&#x0D;&#x0A;- Original element: &apos;java03_inject/src/com.edu.oop&apos;" description="Copy package" destination="/src&lt;com.edu.oop" element1="/src&lt;com.edu.oop" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1658196821721" version="1.0"/>
+</session>

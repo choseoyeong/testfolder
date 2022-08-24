@@ -1,0 +1,12 @@
+package com.edu.test;
+
+
+
+public class StaticExamTest3 {
+
+	public static void main(String[] args) {
+
+		
+	}
+
+}

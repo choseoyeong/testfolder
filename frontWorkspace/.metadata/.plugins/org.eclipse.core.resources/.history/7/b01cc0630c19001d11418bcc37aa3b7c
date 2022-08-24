@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		// 버튼 클릭하면 함수호출...
+		$('#jQueryAjax').click(function () {
+    
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="JQueryAjax" id="jQueryAjax">
+</body>
+</html>

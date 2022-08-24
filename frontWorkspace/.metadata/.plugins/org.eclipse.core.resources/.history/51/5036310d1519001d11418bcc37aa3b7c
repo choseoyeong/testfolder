@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 공공데이터 포털사이트에서 가지고온 기상청 xml 데이터 :: 서버에 저장 -->
+<info>
+	<list>
+		<region></region>
+		<wind></wind>
+	</list>
+</info>

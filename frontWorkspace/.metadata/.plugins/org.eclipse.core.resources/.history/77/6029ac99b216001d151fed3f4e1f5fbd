@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>State Attribute</h2>
+<form action="#">
+	<h3>Enabled</h3>
+	<input />
+
+	<h3>Disabled</h3>
+	<input disabled="disabled"/>
+	
+	<h3>Readonly</h3>
+	<input readonly="readonly" value="BNK"/>
+	
+	<h3>Required</h3>
+	<input required="required"/>
+	
+</form>
+</body>
+</html>

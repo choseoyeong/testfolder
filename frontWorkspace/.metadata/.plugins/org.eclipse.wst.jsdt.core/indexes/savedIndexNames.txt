@@ -1,0 +1,21 @@
+INDEX VERSION 1.4+C:\bnk_jsy\eclipse\frontWorkspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2407606776.index
+2974601983.index
+4089258790.index
+2386712070.index
+868215558.index
+1416096659.index
+4182075024.index
+4049404924.index
+3407985183.index
+2016836196.index
+2494908802.index
+3944240207.index
+390793148.index
+1652058167.index
+3856776141.index
+2612311796.index
+207398618.index
+1595864479.index
+1898214486.index
+303422892.index

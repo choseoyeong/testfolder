@@ -1,0 +1,35 @@
+package com.edu.user.test;
+
+import java.util.Scanner;
+
+// 내가 만든 폭탄
+class UnderAgeBoom extends Exception{
+	
+}
+
+class AdultMovieService {	// 성인영화 관람서비스..
+	public void entrance(int age) throws UnderAgeBoom {
+		if(age >= 19) System.out.println("Ticketing OK...Enter!!");
+		else throw new UnderAgeBoom();			// 고의적으로 내가 터트림
+	}
+}
+
+public class UserExceptionTest {
+	public static void main(String[] args) {
+		AdultMovieService service = new AdultMovieService();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("나이 입력 >> ");
+		int age = sc.nextInt();
+		try {
+			service.entrance(age);
+		} catch(UnderAgeBoom e) {
+			System.out.println(e.getMessage());
+		} finally {
+			System.out.println("오후 10시가 되어서 극장문을 닫습니다.");
+		}
+		System.out.println("Exit...");
+		
+	}
+
+}

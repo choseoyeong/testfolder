@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* #box{ display: none; } */
+	/* #box{ visibility: hidden; } */
+	/* #box{ display: inline; } */
+	/* #box{ display:  block; } */
+	span{ 
+		display: inline;
+		color: red; 
+	} 
+</style>
+
+</head>
+
+
+<body>
+<span>Dummy</span>	<!-- inline tag -->
+<div id="box">
+	However, the element will still <span>take up</span> the same space as before.
+</div>	<!-- block tag -->
+<span>Dummy</span>
+</body>
+</html>

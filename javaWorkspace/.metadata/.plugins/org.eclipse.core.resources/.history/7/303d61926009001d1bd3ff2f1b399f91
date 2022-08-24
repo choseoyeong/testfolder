@@ -1,0 +1,20 @@
+package com.edu.collection.test;
+/*
+ * 		Map
+ * 		 |
+ * 	  HashMap (key-value)
+ * 		 |		
+ * 	 Properties	(String key - String value)
+ * 	 이후에 메타데이터로서 활용된다.
+ * 
+ * 	Collection 계보를 잇는 객체가 아니기 때문에
+ *  거기서 볼 수 없는 독특한 특징으로 객체를 저장한다.
+ * 
+ */
+public class HashMapTest4 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

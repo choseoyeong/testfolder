@@ -1,0 +1,31 @@
+package com.edu.condition.test;
+
+import java.util.Scanner;
+/*
+ * 제어문의 {} 안의 코드블럭이 한줄일때는
+ * {} 생략이 가능하다.
+ */
+public class GradeIfTest3 {
+	public static void main(String[] args) {
+//		int grade = 88; 	//Local 변수
+		
+		System.out.println("성적입력>> ");
+
+		Scanner sc = new Scanner(System.in);	// 키보드로 입력받기
+		int grade = sc.nextInt();
+		
+		System.out.println("과목입력>> ");
+		String subject = sc.next();
+		
+		if(grade<=100 & grade>=90) {		// false
+			System.out.println(subject + ", A Grade...");
+		} else if(grade<90 & grade>=80) {	// true
+			System.out.println(subject + ", B Grade...");
+		} else if(grade<80 & grade>=70) {	// false
+			System.out.println(subject + ", C Grade...");
+		} else {
+			System.out.println("Try Again~~!!");
+		}
+	}
+
+}

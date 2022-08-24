@@ -1,0 +1,10 @@
+package com.edu.array.test;
+
+public class BasicArrayTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		background-image: url("img/BackgroundFront.png"), url("img/BackgroundBack.png");
+		/* background-size: 100% 300px;	*/
+		background-size: 50%, 100%;
+		
+		
+	}
+
+</style>
+</head>
+<body>
+
+</body>
+</html>

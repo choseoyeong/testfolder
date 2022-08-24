@@ -1,0 +1,15 @@
+생성자 쓸지 setter 쓸지는 개인 선택.
+
+
+accNumber: 계좌번호
+withdraw(): 인출
+deposit(): 입금
+
+Account Class 만들때 balance가 생성되므로, 통장 생성할 때 잔액이 있어야 생성 가능함
+
+
+
+Customer class의 name과  address는 생성자로, account는 setter로 생성 추천
+
+
+

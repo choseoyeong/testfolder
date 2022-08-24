@@ -1,0 +1,15 @@
+package com.edu.oop;
+
+/*
+   어제 핵심 이슈(0718)
+  
+  object Class					|	~ Test (Test 클래스, 실행클래스)
+  main()이 없다 ---> 컴파일의 대상		main()이 있다 ---> 실행의 대상
+  
+  
+  
+ */
+
+public class NoteBook {
+
+}

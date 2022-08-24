@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;html01_BasicTag&apos; to &apos;HTML5&apos;" description="Rename resource &apos;html01_BasicTag&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/html01_BasicTag" name="HTML5" stamp="1659659844872" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;HTML5&apos; to &apos;front01_HTML5&apos;" description="Rename resource &apos;HTML5&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/HTML5" name="front01_HTML5" stamp="1659681165555" updateReferences="true"/>
+</session>

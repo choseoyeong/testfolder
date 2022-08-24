@@ -1,0 +1,16 @@
+package com.edu.array.test;
+// Product
+import com.edu.array.vo.Product;
+
+public class ProductServiceTest2 {
+	public static void main(String[] args) {
+		Product[] pros = {
+				new Product("신라면", 12000, 5, "농심"),
+				new Product("새우깡", 1000, 2, "농심"),
+				new Product("옥시크린", 32000, 1, "CJ"),
+				new Product("삼다수", 800, 10, "제주")
+		};
+		
+	
+	}
+}

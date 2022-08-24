@@ -1,0 +1,19 @@
+package com.edu.oop2;
+
+/*
+ * NoteBook을 가지고 있는 개발자 클래스를 정의
+ * 
+ * 이름, 주요기술, 급여, 주소 
+ * 			+ 
+ * 		NoteBook
+ */
+
+public class Programmer {
+	public String name = "jsy";
+	public String mainSkill = "Java";
+	public int salary = 4000000;
+	public String address = "Busan";
+	
+	//Has a Relation
+	NoteBook nb = new NoteBook();
+}

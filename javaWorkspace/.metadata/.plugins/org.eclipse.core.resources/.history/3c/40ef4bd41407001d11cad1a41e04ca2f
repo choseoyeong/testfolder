@@ -1,0 +1,23 @@
+package com.edu.datatype;
+/*
+ * madeCompany	--- "동신사"
+ * color		--- W
+ * price		--- 300.23
+ * scratch		--- 있다 / 없다
+ * material		--- 합판과 알루미늄
+ * buyDate 		--- 2022-07-19 (class MyDate)
+ */
+
+
+class WhiteBoard {
+	
+}
+
+public class DataTypeTest {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.edu.collection.test;
+
+public class ArrayListTest3 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

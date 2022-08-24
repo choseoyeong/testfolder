@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		// 버튼 클릭하면 함수호출...
+		$('#jQueryAjax').click(function () {
+			//비동기 시작..요청부분
+			$.ajax({
+				type:"get",			//메소드 요청 방식
+				url:"HelloAjax?data=BNK"	// 서버 페이지 이름
+			});//ajax
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="JQueryAjax" id="jQueryAjax">
+</body>
+</html>

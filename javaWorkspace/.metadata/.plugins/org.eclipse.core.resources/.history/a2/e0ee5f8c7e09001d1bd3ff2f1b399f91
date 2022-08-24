@@ -1,0 +1,39 @@
+package com.edu.runtime.test;
+/*
+ * Catch는 여러번 가능하다.
+ * 여러개의 catch구문을 작성하더라도 단 하나의 catch 구문만 실행된다.
+ * 
+ */
+public class RuntimeExceptionTest3 {
+
+	public static void main(String[] args) {
+		String[] str = {
+				"Hello",
+				"No, I mean it",
+				"Nice to meet you"
+		};
+		
+		int i=0; 
+		while(i<=3) {
+//			try {
+//				System.out.println(str[i]);		
+//			} catch(Exception e) {
+//				System.out.println("Nice Catch1~~");
+//			} catch(ArrayIndexOutOfBoundsException e) {
+//				System.out.println("Nice Catch2~~");
+//			}
+			
+			try {
+				System.out.println(str[i]);		
+			} catch(ArrayIndexOutOfBoundsException e) {
+				System.out.println("Nice Catch1~~");
+			} catch(Exception e) {
+				System.out.println("Nice Catch2~~");
+			} 
+			
+			i++;
+		}//
+		System.out.println("while loop end...");
+	}//main
+
+}//class

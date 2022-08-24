@@ -1,0 +1,14 @@
+package com.edu.self.service;
+import com.edu.self.vo.Engineer;
+import com.edu.self.vo.Manager;
+
+public interface EmployeeService {
+	
+}
+
+
+
+
+
+
+

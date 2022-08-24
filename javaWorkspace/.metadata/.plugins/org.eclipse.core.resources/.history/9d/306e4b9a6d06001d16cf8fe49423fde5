@@ -1,0 +1,11 @@
+// AppTest나 Test가 붙은 클래스는 무조건 main도 생성하기
+
+package com.bank.oop.test;
+
+public class GreetingAppTest {
+
+	public static void main(String[] args) { // main method(=실행 메소드)
+		
+	}
+
+}

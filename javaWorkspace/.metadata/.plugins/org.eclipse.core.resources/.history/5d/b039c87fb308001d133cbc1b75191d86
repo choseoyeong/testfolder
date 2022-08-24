@@ -1,0 +1,54 @@
+package com.edu.test;
+
+import com.edu.child.Engineer;
+import com.edu.child.Manager;
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+public class EmployeePolyTest1 {
+
+	public static void main(String[] args) {
+		Employee e = new Employee("구자경", 2000000, "역삼동",new MyDate(1999, 1, 3));
+		Manager m =  new Manager("염미정", 2400000, "문현동", new MyDate(2000, 2, 12), "개발부");
+		Engineer eg =  new Engineer("염창희", 3500000, "대연동", new MyDate(1999, 11, 14), "자바", 300);
+		
+		System.out.println(e.getDetails());
+		System.out.println(m.getDetails());
+		System.out.println(eg.getDetails());
+		
+		//////////////////////////////////////////////////////////////////////////
+		
+		/*
+		 * PolyMorphism (다형성)
+		 * ::
+		 * 부모타입으로 자식 객체를 생성하는 것
+		 * ::
+		 * 1) Manager m = new Manager()		// 다형성 아님
+		 * 				VS
+		 * 2) Employee m1 = new Manager()	// 다형성 맞음
+		 * 
+		 */
+		
+		Employee e1 = new Employee("구자경", 2000000, "역삼동",new MyDate(1999, 1, 3));
+		Employee m1 =  new Manager("염미정", 2400000, "문현동", new MyDate(2000, 2, 12), "개발부");
+		Employee eg1 =  new Engineer("염창희", 3500000, "대연동", new MyDate(1999, 11, 14), "자바", 300);
+		
+		System.out.println(e.getDetails());
+		System.out.println(m.getDetails());
+		System.out.println(eg.getDetails());
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

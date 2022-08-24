@@ -1,0 +1,6 @@
+package com.edu.array.service;
+// Product들을 핸들링하는 서비스 클래스...
+// 기능들로만 구성되어져 있다.
+public class ProductService {
+	
+}

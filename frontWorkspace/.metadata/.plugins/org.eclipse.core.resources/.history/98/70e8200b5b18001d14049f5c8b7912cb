@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		// localStorage는 내장 객체이므로 바로 쓰면 됨
+		$('saveBtn').click(function(){
+			alert('click');
+    		// localStorage에 데이터 저장
+    		localStorage.setItem("key1", "안녕");	 // 저장방법 1. 함수 이용 -> 보편적
+    		localStorage.key2 = "HI";	// 저장2.
+    		localStorage["key3"] = "HELLO";	// 저장3.
+		});
+		
+		$('delBtn').click(function(){
+   			// localStorage에 데이터 삭제
+   			localStorage.removeItem("key1");
+		});
+		
+		$('delAllBtn').click(function(){
+    		localStorage.clear();	// localStorage 안에 저장된 모든 데이터 삭제 
+		});
+		
+		$('showBtn').click(function(){
+    		localStorage.getItem("key1") + "," 
+    						+ localStorage.key2 + ", "
+    						+ localStorage["key3"];
+		});
+	});
+</script>
+</head>
+
+<body>
+	<button id="saveBtn">저장</button>
+	<button id="delBtn">삭제</button>
+	<button id="delAllBtn">전체삭제</button>
+	<button id="showBtn">내용보기</button>
+</body>
+</html>

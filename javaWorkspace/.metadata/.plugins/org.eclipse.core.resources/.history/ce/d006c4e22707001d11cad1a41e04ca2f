@@ -1,0 +1,25 @@
+package com.edu.cons;
+
+public class Shirt {
+	public String brand;
+	public boolean longSleeved;
+	public char size;
+	
+	// 생성자는 method 아님. 그러므로 return type 없음
+	public Shirt(String brand, boolean longSleeved, char size) {
+		this.brand = brand;
+		this.longSleeved = longSleeved;
+		this.size = size;
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public boolean isLongSleeved() {
+		return longSleeved;
+	}
+	public char getSize() {
+		return size;
+	}
+	
+	
+}

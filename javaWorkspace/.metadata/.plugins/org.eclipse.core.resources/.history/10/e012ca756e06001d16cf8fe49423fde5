@@ -1,0 +1,19 @@
+// AppTest나 Test가 붙은 클래스는 무조건 main도 생성하기
+package com.bank.oop.test;
+/*
+ * 				OOP
+ * 
+ * 		Object Oriented Class	|	~~ Test
+ * 
+ * 		객체를 의미하는 클래스			객체가 아님
+ * 									앞의 Object Class를 실제 객체로 만들어주는 실행 클래스(값을 집어넣는 용도)
+ * 
+ */
+
+public class GreetingAppTest {
+
+	public static void main(String[] args) { // main method(=실행 메소드)
+		
+	}
+
+}

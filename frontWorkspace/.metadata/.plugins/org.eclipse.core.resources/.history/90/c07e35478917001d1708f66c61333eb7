@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 1. document.write() 함수는 웹 브라우저로 데이터를 바로 출력...
+	document.write(50 + 70 + "<br>");	// 120
+	
+	document.write(eval('50'+'70') + "<br>");	// 5070
+</script>
+</head>
+<body>
+
+</body>
+</html>

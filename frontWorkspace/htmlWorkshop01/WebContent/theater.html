@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		width: 750px;
+		height: 880px;
+		border: 3px solid red;
+		margin: 0 auto;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
+	h2, h3{
+		color: red;
+		text-align: center;
+	}
+	#media{
+		width: 730px;
+		height: 400px;
+		margin: 0 auto;
+	}
+	
+	#form{
+		padding-left: 15px; 
+		padding-right: 15px; 
+	}
+</style>
+
+</head>
+
+
+<body>
+	<h2><b>BNK Theater </b></h2>
+	<h3><b>탑건 매버릭 예매 </b></h3>
+	<div id="media">
+		<img width="360px" height="340px" src="media/maverick.jpg">
+		<iframe width="360px" height="340px" src="https://www.youtube.com/embed/SOLbj1fGEzQ" title=""톰 크루즈가 우리에게 준 선물같은 영화" ≪탑건: 매버릭≫ 완전분석" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	<div id="form">
+		<label>상영관</label>
+		<select name="theater">
+			<option>CGV</option>
+			<option>MEGABOX</option>
+			<option>LOTTECINEMA</option>
+		</select>
+		<label>날짜선택</label>
+		<input type="date" name="date">
+		
+		<fieldset>
+			<legend><b>시간선택</b></legend>
+			<input type="radio" name="time" value="time1" checked>08:30
+			<input type="radio" name="time" value="time2">11:00
+			<input type="radio" name="time" value="time3">14:20
+			<input type="radio" name="time" value="time4">17:25
+			<input type="radio" name="time" value="time5">20:10
+			<input type="radio" name="time" value="time6">23:05
+		</fieldset>
+		
+		<p>
+		<label>요금</label>
+		<del>₩9,000</del> <ins>₩5,000</ins></p>
+		
+		<p>
+		<label>인원</label>
+		<input type="text" name="count" value="0"></p>
+		
+		<p>
+		<label>금액</label>
+		<input type="text" name="price" value="0"></p>
+		
+		<p>
+		<input type="checkbox" name="option" checked>
+		<label>옵션</label> </p>
+	
+		
+		<fieldset>
+			<input type="checkbox" name="menu" value="menu1">팝콘
+			<input type="checkbox" name="menu" value="menu1">콜라		
+		</fieldset>
+		
+	</div>
+	
+	
+</body>
+</html>

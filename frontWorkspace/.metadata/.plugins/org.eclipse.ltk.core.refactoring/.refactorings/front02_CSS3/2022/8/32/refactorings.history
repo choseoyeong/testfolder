@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;css01_margin.html&apos; to &apos;css01_margin.html&apos;&#x0D;&#x0A;- Original project: &apos;front02_CSS3&apos;&#x0D;&#x0A;- Destination element: &apos;css01_margin.html&apos;&#x0D;&#x0A;- Original element: &apos;css01_margin.html&apos;" description="Copy file" element1="WebContent/css01_margin.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1659682809625" target="/front02_CSS3/WebContent/css01_margin.html" units="0" version="1.0"/>
+</session>

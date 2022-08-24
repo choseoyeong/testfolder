@@ -1,0 +1,46 @@
+package com.edu.test;
+
+// interface는 추상메소드로만 이루어져있음(구현부 없는 메소드)
+// 기능의 Template임
+// field가 없다.
+// 추상이기 때문에...객체 생성의 대상이 될 수 없다.. Type으로서만 존재 가능
+
+
+// 클래스 대신 interface를 씀
+interface Flyer{
+	void fly();		// 앞에 public abstract 생략되어 있음
+	public abstract void land();
+	void take_off();
+}
+
+// interface는 extends 대신 implements 사용해야함
+// 부모는 구현부가 없고, 자식은 구현부가 있음 => Override
+class Bird implements Flyer{
+
+	@Override
+	public void fly() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void land() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void take_off() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+public class InterfaceTest {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

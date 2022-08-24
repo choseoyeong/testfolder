@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<span>Dummy</span>	<!-- inline tag -->
+<div id="box">
+	<span>However, the element will still take up the same space as before.</span>
+</div>	/*block tag */
+<span>Dummy</span>
+</body>
+</html>

@@ -1,0 +1,19 @@
+package com.edu.bank.test;
+
+import com.edu.bank.Account;
+
+public class BankArrayTest2 {
+	public static void main(String[] args) {
+		Account[] accounts = {
+			new Account(10000, "부산은행"),
+			new Account(20000, "국민은행"),
+			new Account(30000, "신한은행");
+		};
+		
+		Customer
+		
+		
+		
+	}
+
+}

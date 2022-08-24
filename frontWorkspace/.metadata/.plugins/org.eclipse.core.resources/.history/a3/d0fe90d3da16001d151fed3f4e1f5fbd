@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	자바스크립트에서 제공하는 기본 데이터 타입
+	(기본형) 
+	number
+	string
+	boolean
+	
+	객체형
+	함수형
+	undefined	
+-->
+<script>
+	
+	//	java는 변수 선언과 동시에 타입을 선언하지만, javaScript는 타입 선언 따로 안함 
+	//	1. 공간 할당
+	//	2. 값 할당
+	//	3. 그 결과로 stringvar 변수 타입이 String으로 결정됨	 --> 동적 할당
+	 
+	var variable;
+	var stringvar = "String";
+	var numbervar = 277;
+	var booleanvar = true;
+	var functionvar = function (){};	// 익명 함수.
+	// 익명함수는 함수 이름이 없으므로 함수 이름으로 호출 불가능
+	// 그러므로 변수에 할당해서 사용함. functionvar(); 처럼
+	
+	var objvar = {};	// 자바스크립트에서 이런 형태가 객체임
+	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

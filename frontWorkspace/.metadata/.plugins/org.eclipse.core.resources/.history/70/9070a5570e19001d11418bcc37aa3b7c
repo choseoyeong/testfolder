@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		// 버튼 클릭하면 함수호출...
+		$('#jQueryAjax').click(function () {
+			//비동기 시작..
+			$.ajax({
+				// 요청부분
+				type:"get",			//메소드 요청 방식
+				url:"HelloAjax?data=BNK",	// 서버 페이지 이름..이 서버에게 페이지가 아니라 데이터를 받음
+				
+				// 응답부분
+				success: function(resultData){	// 서버로부터 데이터를 받기 때문에 인자 필요함
+					alert(resultData);
+					
+				}//success
+				
+			});//ajax
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="JQueryAjax" id="jQueryAjax">
+</body>
+</html>

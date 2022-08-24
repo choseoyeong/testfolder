@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		background-image: url("img/BackgroundFront.png"), url("img/BackgroundBack.png");
+		/* background-size: 100% 300px;	*/
+		background-size: 50%, 200%;		/* ','를 사용하면 각각 앞 이미지, 뒤 이미지 */
+
+		background-repeat: no-repeat;
+		
+		
+	}
+
+</style>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" name="loginFrm">
+		닉네임 <input type="text" name="nick" id="nick"><br><br>
+		취 미 <input type="text" name="hobby" id="hobby"><br><br>
+		<input type="button" value="취미보기">
+	</form>
+</body>
+</html>

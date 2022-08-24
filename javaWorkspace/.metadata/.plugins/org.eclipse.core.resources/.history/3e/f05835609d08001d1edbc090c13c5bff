@@ -1,0 +1,18 @@
+package com.edu.child;
+
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+// Child Class..
+public class Manager extends Employee{
+	
+	private String dept;
+	
+	public Manager(String name, double salary, MyDate birthday, String dept) {
+		super();		// 자식을 만들면 무조건 부모가 먼저 만들어진다.
+		this.name = name;
+		this.salary = salary;
+		this.birthday = birthday;
+		this.dept = dept;
+	}
+}

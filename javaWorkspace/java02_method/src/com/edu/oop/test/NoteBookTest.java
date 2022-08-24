@@ -1,0 +1,23 @@
+package com.edu.oop.test;
+
+import com.edu.oop.NoteBook;
+
+public class NoteBookTest {
+
+	public static void main(String[] args) {
+		/*
+		 * 1. 객체 생성
+		 * 2. 값 할당 | 메소드 호출
+		 */
+		
+		NoteBook nb = new NoteBook();
+		
+		nb.brand = "SAMSUNG";
+		nb.price = 1500000;
+		nb.serialNumber = 1234;
+		
+		nb.printNoteBookInfo();
+		System.out.println( "Brand : " + nb.getBrand() );
+	}
+
+}

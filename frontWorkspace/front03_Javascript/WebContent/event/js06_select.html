@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function itemChange() {
+		var subway = document.getElementById("subway");
+		
+		//선택한 노선이 있다면..
+		if(subway.value != null) alert(subway.value+"호선 선택!");
+	}
+
+</script>
+
+</head>
+<body>
+<form name="frm">
+	<!-- 클릭 할 때가 아니라 아이템이 바뀔 때마다 이벤트가 발생해야 함. -->
+	<select id="subway" onchange="itemChange()"> 
+		<option value="===">====지하철 ?호선====</option>
+		<option value="1">1</opion>
+		<option value="2">2</opion>
+		<option value="3">3</opion>
+		<option value="4">4</opion>
+	</select>
+</form>
+</body>
+</html>

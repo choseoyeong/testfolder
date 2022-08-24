@@ -1,0 +1,29 @@
+package com.edu.test;
+
+class A{
+	public final static int BASIC_SALARY = 3000000;
+	public final String test() {
+		return "오버라이딩 금지";
+	}
+}
+
+final class B{	//상속 금지
+	
+	
+}
+
+//class C extends B{
+//}
+
+class D extends A {
+	
+}
+
+public class StaticExamTest3 {
+
+	public static void main(String[] args) {
+
+		
+	}
+
+}

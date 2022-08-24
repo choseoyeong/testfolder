@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+   	
+   	// 1. h3를 클릭하면 함수 호출 되도록
+   	$('#accordion h3').click(function () {
+    	var text = $(this).text();
+    	
+    	if(text=="BNK 연수 과정 리스트"){
+    	}else if(text=="BNK 전국 산하 지점 소개"){
+    	}
+    
+	}); 
+    
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="accordion">
+  <h3>INTRO</h3>
+  <div>
+    <p>
+ 		부산은행 연수원을 찾아주셔서 감사합니다.<br>
+ 		인턴 여러분들은 앞으로 3개월동안 연수과정을 받으시게 됩니다. <br>
+ 		아래 과정을 열어보시고 직접 확인해주시기 바랍니다.
+    </p>
+  </div>
+  
+  <h3>BNK 연수 과정 리스트</h3>
+  <div id="subject">
+    <p>
+ 
+    </p>
+  </div>
+  
+  <h3>BNK 전국 산하 지점 소개</h3>
+  <div id="branches">
+    <p>
+ 
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

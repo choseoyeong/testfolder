@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>onclick 이벤트</title>
+<style>
+	h1{
+		background-color: black;
+		color: yellow;
+	}
+</style>
+
+<script>
+	function push() {
+		// alert("push...Click..");
+		demo = document.getElementById("demo");	// 전역변수
+		// alert(demo);
+		
+		// Javascript can change HTML content...innerHTML을 사용
+		// double, single 똑같은거 겹쳐서 쓰면 안됨
+		demo.innerHTML() = "<h2><font color='tomato'>Hello getElementById()!!</h2>";		
+	}
+</script>
+</head>
+
+<body>
+
+<h1>What Can JavaScript Do?</h1>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick="push()">Click Me!</button>
+
+</body>
+</html>

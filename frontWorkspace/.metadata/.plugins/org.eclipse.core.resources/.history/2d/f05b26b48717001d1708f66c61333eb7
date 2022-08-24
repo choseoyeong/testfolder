@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function itemChange() {
+		alert("addss");
+	}
+
+</script>
+
+</head>
+<body>
+<form name="frm">
+	<select id="subway" onclick="itemChange()">
+		<option value="===">====지하철 ?호선====</option>
+		<option value="1">1</opion>
+		<option value="2">2</opion>
+		<option value="3">3</opion>
+		<option value="4">4</opion>
+	</select>
+</form>
+</body>
+</html>

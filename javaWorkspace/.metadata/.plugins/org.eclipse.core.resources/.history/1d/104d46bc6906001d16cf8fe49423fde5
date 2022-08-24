@@ -1,0 +1,16 @@
+// 한줄 처리 주석
+/*   
+ GreetingTest는 문법은 Java 문법을 지켜서 작성된 코드이지만
+ 객체지향의 원리가 전혀 반영되지 않은 코드이다.
+ 
+ 
+ */
+package test;
+
+public class GreetingTest {
+	public static void main(String[] args) {
+		System.out.println("여러분 반갑습니다.");
+
+	}
+
+}

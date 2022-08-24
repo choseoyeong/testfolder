@@ -1,0 +1,17 @@
+package com.edu.compile.test;
+
+import java.io.FileReader;
+
+class FileReading {
+	public void readFile(String fileName) {
+		// 파일안의 내용을 읽어들이는 로직을 작성..
+	}
+}
+
+public class CompileExceptionTest1 {
+	public static void main(String[] args) {
+		FileReader fr = new FileReader(file);
+
+	}
+
+}

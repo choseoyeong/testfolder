@@ -1,0 +1,17 @@
+package com.bank.busan;
+
+public class Customer {
+	public String name;
+	public Account account;
+	public String address;
+	
+	
+	public Account getAccount() {
+		
+	}
+	
+	public String getName() {
+		
+		
+	}
+}

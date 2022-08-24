@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<span>Dummy</span>	/* inline tag */
+<div></div>	/*block tag */
+
+</body>
+</html>
