@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+<!-- 매핑은 무조건 두번 함 -->
+<servlet>
+	<servlet-name>GenericServletTest</servlet-name> <!-- 서버 내부 매핑. 패키지 명이 길기 때문에 짧게 줄임 -->
+	<servlet-class>servlet.web.generic.GenericServletTest</servlet-class> <!-- FQCN -->
+</servlet>
+
+<!-- client가 요청하는 매핑 -->
+<servlet-mapping>
+	<servlet-name>GenericServletTest</servlet-name>
+	<url-pattern>/GS</url-pattern>
+</servlet-mapping>
+
+</web-app>

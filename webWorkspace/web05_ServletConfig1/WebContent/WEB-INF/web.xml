@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <servlet>
+    <servlet-name>FrenchServletConfig</servlet-name>
+    <servlet-class> web.servlet.config.GreetingServletConfig</servlet-class>
+    
+    <init-param>
+    	<param-name>GREET</param-name>
+    	<param-value>Bonjour Moush~~, Bonjour Moush~~, Bonjour Moush~~</param-value>
+    </init-param>
+    
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrenchServletConfig</servlet-name>
+    <url-pattern>/french</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>EnglishServletConfig</servlet-name>
+    <servlet-class> web.servlet.config.GreetingServletConfig</servlet-class>
+    
+    <init-param>
+    	<param-name>GREET</param-name>
+    	<param-value>Welcome to Olympic~~</param-value>
+    </init-param>
+    
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EnglishServletConfig</servlet-name>
+    <url-pattern>/english</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>KoreaServletConfig</servlet-name>
+    <servlet-class> web.servlet.config.GreetingServletConfig</servlet-class>
+    
+    <init-param>
+    	<param-name>GREET</param-name>
+    	<param-value>환영합니다. 올림픽 경기를 편안한 마음으로 즐겨주세요~~</param-value>
+    </init-param>
+    
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KoreaServletConfig</servlet-name>
+    <url-pattern>/korea</url-pattern>
+  </servlet-mapping>
+</web-app>

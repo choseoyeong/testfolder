@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#wrap{
+		text-align:center;
+		border: 2px dotted green;
+	}
+	h2{
+		color: purple;
+	}
+</style>
+</head>
+<body>
+<!-- div로 다룰 범위를 지정하고 이름을 정함 -->
+<div id="wrap">
+	<p><h2> HttpSession 활용한 Cafe Member Manage </h2></p>
+	<p><a href="register.jsp">회원 가입 하기</a></p>
+	<p><a href="find.jsp">회원 검색 하기</a></p>	
+	<!-- form이 아니므로 hidden tag 사용물가. get방식으로 보낸다. -->
+	<p><a href="front.do?command=showAll">전체 회원 보기</a></p>
+	<p><a href="login.jsp">로그인 하기</a></p>
+</div>
+
+</body>
+</html>
