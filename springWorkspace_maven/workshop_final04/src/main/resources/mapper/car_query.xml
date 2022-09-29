@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sql.car.mapper">
+	<resultMap type="car" id="carWithCompany">
+		<id column="num" property="num"/>
+		<result column="model" property="model"/>
+		<result column="price" property="price"/>
+		<result column="vcode" property="vcode"/>
+		<association property="company" javaType="company">
+			<id column="vcode" property="vcode"/>
+			<result column="vendor" property="vendor"/>
+		</association>
+	</resultMap>
+	
+	<resultMap type="company" id="company">
+		<id column="vcode" property="vcode"/>
+		<result column="vendor" property="vendor"/>
+	</resultMap>
+
+	<insert id="insertCar" parameterType="car">
+		INSERT
+		INTO car(num, model, price, vcode)
+		VALUES(#{num}, #{model}, #{price}, #{vcode})
+	</insert>
+	
+	<!-- 동적쿼리로 삭제 구현  -->
+	<delete id="deleteCar" parameterType="list">
+		DELETE
+		FROM car
+		where num in
+		<foreach collection="list" item="num" open="(" close=")" separator=",">
+			#{num}
+		</foreach>
+	</delete>
+	
+	<!-- 동적쿼리로 검색 구현  -->
+	<select id="findCar" parameterType="car" resultMap="carWithCompany">
+		<!-- join문 사용 -->
+		SELECT
+		c.num, c.model, c.price, c.vcode, cp.vendor
+		FROM car c
+		JOIN company cp ON(c.vcode=cp.vcode)
+		<if test="num != null">
+			WHERE c.num=#{num}
+		</if>
+	</select>
+	
+	<select id="findCompany" parameterType="company" resultMap="company">
+		SELECT
+		vcode, vendor
+		FROM company
+		<if test="vcode != null">
+			WHERE vcode=#{vcode}
+		</if>
+	</select>
+	
+	<update id="updateCar" parameterType="car">
+		UPDATE car SET model=#{model}, price=#{price} WHERE num=#{num}
+	</update>
+	
+	<!-- 멤버 관련 쿼리문 -->
+	
+	<insert id="insertUser" parameterType="userInfo">
+		INSERT
+		INTO userinfo(id, pw)
+		VALUES(#{id}, #{pw})
+	</insert>
+	
+	<!-- 동적쿼리 :: 로그인 기능과 특정고객 찾는 기능 -->
+	<select id="selectUser" parameterType="userInfo" resultType="userInfo">
+	 	SELECT
+		id, pw
+		FROM userinfo 
+		WHERE id=#{id}
+		<if test="pw != null">
+			AND pw=#{pw}
+		</if>
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
