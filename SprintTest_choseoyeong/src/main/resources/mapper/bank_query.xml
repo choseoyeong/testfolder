@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sql.bank.mapper">
+	<resultMap type="product" id="product">
+		<id column="code" property="code"/>
+		<result column="title" property="title"/>
+		<result column="category" property="category"/>
+		<result column="rate" property="rate"/>
+		<result column="memo" property="memo"/>
+	</resultMap>
+
+	<insert id="insertProduct" parameterType="product">
+		INSERT
+		INTO product(code, title, category, rate, memo)
+		VALUES(#{code}, #{title}, #{category}, #{rate}, #{memo})
+	</insert>
+	
+	
+	<delete id="deleteProduct" parameterType="String">
+		DELETE
+		FROM product
+		where code=#{code}
+	</delete>
+	
+	<!-- 동적쿼리로 검색 구현  -->
+	<select id="findProduct" parameterType="product" resultMap="product">
+		<!-- join문 사용 -->
+		SELECT
+		code, title, category, rate, memo
+		FROM product
+		<if test="code != null">
+			WHERE code=#{code}
+		</if>
+	</select>
+
+	<!-- 동적쿼리 :: 로그인 기능과 특정고객 찾는 기능 -->
+	<select id="selectUser" parameterType="userInfo" resultType="userInfo">
+	 	SELECT
+		id, pw, name
+		FROM userinfo 
+		WHERE id=#{id}
+		<if test="pw != null">
+			AND pw=#{pw}
+		</if>
+	</select> 
+</mapper>
+
+
+
+
+
+
+
+
